@@ -6,6 +6,12 @@ module.exports = [
   'strapi::poweredBy',
   'strapi::query',
   'strapi::body',
+
+  {
+    name: 'global::department-rbac',
+    config: {},
+  },
+
   'strapi::session',
   'strapi::favicon',
   'strapi::public',

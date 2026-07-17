@@ -1,0 +1,68 @@
+{
+  "kind": "collectionType",
+  "collectionName": "faculty_leaves",
+  "info": {
+    "singularName": "faculty-leave",
+    "pluralName": "faculty-leaves",
+    "displayName": "FacultyLeave"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "LeaveType": {
+      "type": "enumeration",
+      "enum": [
+        "Casual Leave",
+        "Sick Leave",
+        "Earned Leave",
+        "On Duty"
+      ]
+    },
+    "LeaveReason": {
+      "type": "blocks",
+      "required": true
+    },
+    "startDate": {
+      "type": "date"
+    },
+    "endDate": {
+      "type": "date"
+    },
+    "leaveStatus": {
+      "type": "enumeration",
+      "enum": [
+        "Approved",
+        "Pending",
+        "Rejected"
+      ]
+    },
+    "appliedOn": {
+      "type": "date"
+    },
+    "remarks": {
+      "type": "blocks"
+    },
+    "faculty": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::faculty.faculty",
+      "inversedBy": "faculty_leaves"
+    },
+    "noOfDays": {
+      "type": "integer"
+    },
+    "paymentStatus": {
+      "type": "string"
+    },
+    "department": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::department.department"
+    },
+    "accessDepartmentKey": {
+      "type": "string"
+    }
+  }
+}

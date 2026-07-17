@@ -1,0 +1,112 @@
+{
+  "kind": "collectionType",
+  "collectionName": "students_admissions",
+  "info": {
+    "singularName": "students-admission",
+    "pluralName": "students-admissions",
+    "displayName": "Students Admission"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "applicationID": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "fullName": {
+      "type": "string",
+      "minLength": 2,
+      "maxLength": 100,
+      "required": true
+    },
+    "dateOfBirth": {
+      "type": "date",
+      "required": true
+    },
+    "Gender": {
+      "type": "enumeration",
+      "required": true,
+      "enum": [
+        "Male",
+        "Female",
+        "Other"
+      ]
+    },
+    "address": {
+      "type": "text",
+      "minLength": 5,
+      "maxLength": 150,
+      "required": true
+    },
+    "department": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::department.department"
+    },
+    "accessDepartmentKey": {
+      "type": "string"
+    },
+    "course": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::course.course"
+    },
+    "admissionStatus": {
+      "type": "enumeration",
+      "required": true,
+      "default": "Pending",
+      "enum": [
+        "Pending",
+        "Approved",
+        "Rejected",
+        "Waitlisted"
+      ]
+    },
+    "paymentStatus": {
+      "type": "enumeration",
+      "required": true,
+      "default": "Pending",
+      "enum": [
+        "Pending",
+        "Paid",
+        "Failed",
+        "Refunded"
+      ]
+    },
+    "studentPhoto": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "email": {
+      "type": "email"
+    },
+    "phone": {
+      "type": "biginteger"
+    },
+    "Semester": {
+      "type": "enumeration",
+      "enum": [
+        "Semester 1",
+        "Semester 2",
+        "Semester 3",
+        "Semester 4",
+        "Semester 5",
+        "Semester 6",
+        "Semester 7",
+        "Semester 8"
+      ]
+    },
+    "attendances": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::attendance.attendance",
+      "mappedBy": "students_admission"
+    }
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "kind": "collectionType",
+  "collectionName": "cutoffs",
+  "info": {
+    "singularName": "cutoff",
+    "pluralName": "cutoffs",
+    "displayName": "Cutoff"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Year": {
+      "type": "string"
+    },
+    "Cast": {
+      "type": "enumeration",
+      "enum": [
+        "Open",
+        "Open+EWS",
+        "OBC",
+        "Sc",
+        "NT"
+      ]
+    },
+    "department": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::department.department",
+      "inversedBy": "cutoffs"
+    },
+    "Round_1": {
+      "type": "decimal"
+    },
+    "Round_2": {
+      "type": "decimal"
+    },
+    "Round_3": {
+      "type": "decimal"
+    },
+    "accessDepartmentKey": {
+      "type": "string"
+    }
+  }
+}

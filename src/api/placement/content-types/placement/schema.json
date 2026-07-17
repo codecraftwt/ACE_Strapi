@@ -1,0 +1,55 @@
+{
+  "kind": "collectionType",
+  "collectionName": "placements",
+  "info": {
+    "singularName": "placement",
+    "pluralName": "placements",
+    "displayName": "Placement"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "companyName": {
+      "type": "text"
+    },
+    "Package": {
+      "type": "decimal"
+    },
+    "studentName": {
+      "type": "text"
+    },
+    "department": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::department.department"
+    },
+    "companyImg": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "studentImg": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "Year": {
+      "type": "string"
+    },
+    "accessDepartmentKey": {
+      "type": "string"
+    }
+  }
+}

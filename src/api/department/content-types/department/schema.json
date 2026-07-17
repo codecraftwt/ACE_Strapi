@@ -1,0 +1,80 @@
+{
+  "kind": "collectionType",
+  "collectionName": "departments",
+  "info": {
+    "singularName": "department",
+    "pluralName": "departments",
+    "displayName": "Department"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "deptName": {
+      "type": "string"
+    },
+    "description": {
+      "type": "blocks"
+    },
+    "location": {
+      "type": "text"
+    },
+    "HeadName": {
+      "type": "string"
+    },
+    "headProfilePhoto": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "achievements": {
+      "type": "blocks"
+    },
+    "courses": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::course.course",
+      "mappedBy": "department"
+    },
+    "cutoffs": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::cutoff.cutoff",
+      "mappedBy": "department"
+    },
+    "Photos": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "Department_vision": {
+      "type": "blocks"
+    },
+    "Department_mission": {
+      "type": "blocks"
+    },
+    "send_emails": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::send-email.send-email",
+      "mappedBy": "department"
+    },
+    "results": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::result.result",
+      "mappedBy": "department"
+    }
+  }
+}

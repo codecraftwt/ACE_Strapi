@@ -1,0 +1,36 @@
+{
+  "kind": "collectionType",
+  "collectionName": "attendances",
+  "info": {
+    "singularName": "attendance",
+    "pluralName": "attendances",
+    "displayName": "Attendance"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "students_admission": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::students-admission.students-admission",
+      "inversedBy": "attendances"
+    },
+    "date": {
+      "type": "date"
+    },
+    "ispresent": {
+      "type": "boolean"
+    },
+    "subject": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::subject.subject"
+    },
+    "isAllPresent": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}

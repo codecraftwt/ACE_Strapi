@@ -1,0 +1,26 @@
+{
+  "kind": "collectionType",
+  "collectionName": "exams",
+  "info": {
+    "singularName": "exam",
+    "pluralName": "exams",
+    "displayName": "Exam"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "examName": {
+      "type": "string"
+    },
+    "examTiype": {
+      "type": "enumeration",
+      "enum": [
+        "Unit Test ",
+        "Internal",
+        "Semester Exam"
+      ]
+    }
+  }
+}

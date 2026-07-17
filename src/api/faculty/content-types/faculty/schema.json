@@ -1,0 +1,82 @@
+{
+  "kind": "collectionType",
+  "collectionName": "faculties",
+  "info": {
+    "singularName": "faculty",
+    "pluralName": "faculties",
+    "displayName": "Faculty"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Name": {
+      "type": "string"
+    },
+    "Address": {
+      "type": "text"
+    },
+    "Phone": {
+      "type": "biginteger"
+    },
+    "Profile_photo": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "qualification": {
+      "type": "text"
+    },
+    "Joining_date": {
+      "type": "date"
+    },
+    "Exprience": {
+      "type": "integer"
+    },
+    "department": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::department.department"
+    },
+    "designation": {
+      "type": "enumeration",
+      "enum": [
+        "HOD",
+        "Professor",
+        "Associate Professor",
+        "Assistant Professor",
+        "Lecturer",
+        "Senior Lecturer"
+      ]
+    },
+    "users_permissions_user": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "Email": {
+      "type": "email"
+    },
+    "faculty_leaves": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::faculty-leave.faculty-leave",
+      "mappedBy": "faculty"
+    },
+    "accessDepartmentKey": {
+      "type": "string"
+    },
+    "subjects": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::subject.subject",
+      "mappedBy": "faculty"
+    }
+  }
+}

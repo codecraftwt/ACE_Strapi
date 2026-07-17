@@ -1,0 +1,59 @@
+{
+  "kind": "collectionType",
+  "collectionName": "notices",
+  "info": {
+    "singularName": "notice",
+    "pluralName": "notices",
+    "displayName": "Notice"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Title": {
+      "type": "text"
+    },
+    "Description": {
+      "type": "blocks"
+    },
+    "Type": {
+      "type": "enumeration",
+      "enum": [
+        "General",
+        "Event",
+        "Exam",
+        "Admission",
+        "Urgent",
+        "Scholarship",
+        "Holiday",
+        "Result",
+        "Circular"
+      ]
+    },
+    "isActive": {
+      "type": "boolean"
+    },
+    "Attachment": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "noticeDate": {
+      "type": "date"
+    },
+    "department": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::department.department"
+    },
+    "accessDepartmentKey": {
+      "type": "string"
+    }
+  }
+}

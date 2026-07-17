@@ -1,0 +1,35 @@
+{
+  "collectionName": "components_shared_placement_officers",
+  "info": {
+    "displayName": "PlacementOfficer"
+  },
+  "options": {},
+  "attributes": {
+    "Name": {
+      "type": "string"
+    },
+    "TOP_Msg": {
+      "type": "blocks"
+    },
+    "Email": {
+      "type": "text"
+    },
+    "Phone": {
+      "type": "biginteger"
+    },
+    "Photo": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "Position": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

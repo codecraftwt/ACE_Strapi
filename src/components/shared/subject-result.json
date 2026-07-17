@@ -1,0 +1,38 @@
+{
+  "collectionName": "components_shared_subject_results",
+  "info": {
+    "displayName": "subject-result"
+  },
+  "options": {},
+  "attributes": {
+    "subject": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::subject.subject"
+    },
+    "faculty": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::faculty.faculty"
+    },
+    "totalMarks": {
+      "type": "integer"
+    },
+    "passingmarks": {
+      "type": "integer"
+    },
+    "obtainedmarks": {
+      "type": "integer"
+    },
+    "percentage": {
+      "type": "decimal"
+    },
+    "grade": {
+      "type": "string"
+    },
+    "resultResult": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

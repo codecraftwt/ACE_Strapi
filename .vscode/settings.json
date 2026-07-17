@@ -1,0 +1,9 @@
+{
+    "json.schemas": [
+
+    ],
+    "files.exclude": {
+    "**/.tmp": false
+  },
+  "explorer.excludeGitIgnore": false
+}

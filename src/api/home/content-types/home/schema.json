@@ -1,0 +1,43 @@
+{
+  "kind": "collectionType",
+  "collectionName": "homes",
+  "info": {
+    "singularName": "home",
+    "pluralName": "homes",
+    "displayName": "Home"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "heroTitle": {
+      "type": "string"
+    },
+    "heroSubtitle": {
+      "type": "blocks"
+    },
+    "herobutton": {
+      "type": "string"
+    },
+    "Introduction": {
+      "type": "blocks"
+    },
+    "Vision": {
+      "type": "blocks"
+    },
+    "Mission": {
+      "type": "blocks"
+    },
+    "herosiderImgs": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    }
+  }
+}

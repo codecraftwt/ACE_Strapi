@@ -1,0 +1,35 @@
+{
+  "kind": "collectionType",
+  "collectionName": "placementstatistics",
+  "info": {
+    "singularName": "placementstatistic",
+    "pluralName": "placementstatistics",
+    "displayName": "placementStatistic"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Year": {
+      "type": "string"
+    },
+    "totalJobOffers": {
+      "type": "integer"
+    },
+    "totalCompanies": {
+      "type": "integer"
+    },
+    "averagePackage": {
+      "type": "decimal"
+    },
+    "highestPackage": {
+      "type": "decimal"
+    },
+    "branchWisePlacements": {
+      "type": "component",
+      "component": "shared.branchwiseplacement",
+      "repeatable": true
+    }
+  }
+}

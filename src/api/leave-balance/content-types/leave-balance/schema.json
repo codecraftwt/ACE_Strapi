@@ -1,0 +1,29 @@
+{
+  "kind": "collectionType",
+  "collectionName": "leave_balances",
+  "info": {
+    "singularName": "leave-balance",
+    "pluralName": "leave-balances",
+    "displayName": "LeaveBalance"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "faculty": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::faculty.faculty"
+    },
+    "paidLeavesRemaining": {
+      "type": "integer"
+    },
+    "unpaidLeavesTaken": {
+      "type": "integer"
+    },
+    "year": {
+      "type": "string"
+    }
+  }
+}

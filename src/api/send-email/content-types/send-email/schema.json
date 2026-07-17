@@ -1,0 +1,42 @@
+{
+  "kind": "collectionType",
+  "collectionName": "send_emails",
+  "info": {
+    "singularName": "send-email",
+    "pluralName": "send-emails",
+    "displayName": "SendEmail"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Title": {
+      "type": "text"
+    },
+    "subject": {
+      "type": "text"
+    },
+    "msg": {
+      "type": "richtext"
+    },
+    "department": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::department.department",
+      "inversedBy": "send_emails"
+    },
+    "course": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::course.course",
+      "inversedBy": "send_emails"
+    },
+    "students": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::student.student",
+      "mappedBy": "send_email"
+    }
+  }
+}

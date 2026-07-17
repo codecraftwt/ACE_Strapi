@@ -15,9 +15,17 @@
     "title": {
       "type": "string"
     },
-    "blocks": {
-      "type": "dynamiczone",
-      "components": ["shared.media", "shared.quote", "shared.rich-text", "shared.slider"]
+    "History": {
+      "type": "blocks"
+    },
+    "academicExcellence": {
+      "type": "blocks"
+    },
+    "Placements": {
+      "type": "blocks"
+    },
+    "campusLife": {
+      "type": "blocks"
     }
   }
 }

@@ -1,0 +1,39 @@
+{
+  "kind": "singleType",
+  "collectionName": "contacts",
+  "info": {
+    "singularName": "contact",
+    "pluralName": "contacts",
+    "displayName": "Contact"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "collegeName": {
+      "type": "string"
+    },
+    "address": {
+      "type": "text"
+    },
+    "phone": {
+      "type": "string"
+    },
+    "email": {
+      "type": "string"
+    },
+    "officeHours": {
+      "type": "string"
+    },
+    "socialLinks": {
+      "type": "json"
+    },
+    "latitude": {
+      "type": "text"
+    },
+    "longitute": {
+      "type": "text"
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_shared_academic_subjects",
+  "info": {
+    "displayName": "academicSubject"
+  },
+  "options": {},
+  "attributes": {
+    "subjectName": {
+      "type": "text"
+    },
+    "subjectCode": {
+      "type": "string"
+    },
+    "credits": {
+      "type": "integer"
+    }
+  },
+  "config": {}
+}
