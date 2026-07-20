@@ -1,0 +1,57 @@
+{
+  "kind": "collectionType",
+  "collectionName": "fee_structures",
+  "info": {
+    "singularName": "fee-structure",
+    "pluralName": "fee-structures",
+    "displayName": "FeeStructure"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "course": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::course.course",
+      "inversedBy": "fee_structures"
+    },
+    "studnetCategory": {
+      "type": "enumeration",
+      "enum": [
+        "Open",
+        "OBC",
+        "SC",
+        "ST",
+        "VJNT",
+        "NT",
+        "SBC",
+        "EWS",
+        "TFWS",
+        "Other"
+      ]
+    },
+    "reimbursementAmount": {
+      "type": "decimal"
+    },
+    "examFee": {
+      "type": "decimal"
+    },
+    "developmentFee": {
+      "type": "decimal"
+    },
+    "labBreakageFee": {
+      "type": "decimal"
+    },
+    "libraryFee": {
+      "type": "decimal"
+    },
+    "gymkhanaFee": {
+      "type": "decimal"
+    },
+    "academicYear": {
+      "type": "string"
+    }
+  }
+}

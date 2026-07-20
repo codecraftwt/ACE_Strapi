@@ -43,6 +43,16 @@
       "relation": "oneToMany",
       "target": "api::result.result",
       "mappedBy": "course"
+    },
+    "baseFeeAmount": {
+      "type": "decimal",
+      "min": 0
+    },
+    "fee_structures": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::fee-structure.fee-structure",
+      "mappedBy": "course"
     }
   }
 }

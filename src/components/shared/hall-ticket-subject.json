@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_shared_hall_ticket_subjects",
+  "info": {
+    "displayName": "hall-ticket-subject"
+  },
+  "options": {},
+  "attributes": {
+    "subject": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::subject.subject"
+    },
+    "examDate": {
+      "type": "date"
+    },
+    "ExamTime": {
+      "type": "string"
+    },
+    "ExamRoom": {
+      "type": "string"
+    },
+    "ExamDay": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

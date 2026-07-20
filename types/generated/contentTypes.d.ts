@@ -758,6 +758,13 @@ export interface ApiCourseCourse extends Struct.CollectionTypeSchema {
   };
   attributes: {
     accessDepartmentKey: Schema.Attribute.String;
+    baseFeeAmount: Schema.Attribute.Decimal &
+      Schema.Attribute.SetMinMax<
+        {
+          min: 0;
+        },
+        number
+      >;
     courseName: Schema.Attribute.String;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -768,6 +775,10 @@ export interface ApiCourseCourse extends Struct.CollectionTypeSchema {
     >;
     duration: Schema.Attribute.String;
     eligibility: Schema.Attribute.Text;
+    fee_structures: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::fee-structure.fee-structure'
+    >;
     intake: Schema.Attribute.String;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
@@ -883,10 +894,18 @@ export interface ApiExamExam extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
+    course: Schema.Attribute.Relation<'manyToOne', 'api::course.course'>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    department: Schema.Attribute.Relation<
+      'manyToOne',
+      'api::department.department'
+    >;
     examName: Schema.Attribute.String;
+    Examstatus: Schema.Attribute.Enumeration<
+      ['Draft', 'Published', 'Completed']
+    >;
     examTiype: Schema.Attribute.Enumeration<
       ['Unit Test ', 'Internal', 'Semester Exam']
     >;
@@ -894,9 +913,28 @@ export interface ApiExamExam extends Struct.CollectionTypeSchema {
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::exam.exam'> &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
+    Semester: Schema.Attribute.Enumeration<
+      [
+        'Semester 1',
+        'Semester 2',
+        'Semester 3',
+        'Semester 4',
+        'Semester 5',
+        'Semester 6 ',
+        'Semester 7',
+        'Semester 8',
+      ]
+    >;
+    subjects: Schema.Attribute.Relation<'manyToMany', 'api::subject.subject'>;
+    TestDate: Schema.Attribute.Date;
+    TestTime: Schema.Attribute.Time;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    users_permissions_user: Schema.Attribute.Relation<
+      'oneToOne',
+      'plugin::users-permissions.user'
+    >;
   };
 }
 
@@ -1009,6 +1047,93 @@ export interface ApiFacultyFaculty extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiFeeReceiptFeeReceipt extends Struct.CollectionTypeSchema {
+  collectionName: 'fee_receipts';
+  info: {
+    displayName: 'feeReceipt';
+    pluralName: 'fee-receipts';
+    singularName: 'fee-receipt';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    baseFee: Schema.Attribute.Decimal;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    currentPaymentAmount: Schema.Attribute.Decimal;
+    developmentFee: Schema.Attribute.Decimal;
+    examFee: Schema.Attribute.Decimal;
+    gymkhanaFee: Schema.Attribute.Decimal;
+    libraryFee: Schema.Attribute.Decimal;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::fee-receipt.fee-receipt'
+    > &
+      Schema.Attribute.Private;
+    paymentAmount: Schema.Attribute.Decimal;
+    paymentDate: Schema.Attribute.Date;
+    Paymethod: Schema.Attribute.Enumeration<
+      ['Cash', 'UPI', 'Card', 'Bank Transfer', 'Cheque', 'Online']
+    >;
+    previousPaidFee: Schema.Attribute.Decimal;
+    publishedAt: Schema.Attribute.DateTime;
+    receiptNumber: Schema.Attribute.String;
+    reimbursementAmount: Schema.Attribute.Decimal;
+    remainingFee: Schema.Attribute.Decimal;
+    students_admission: Schema.Attribute.Relation<
+      'manyToOne',
+      'api::students-admission.students-admission'
+    >;
+    totalPaidFee: Schema.Attribute.Decimal;
+    totalPayableFee: Schema.Attribute.Decimal;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiFeeStructureFeeStructure
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'fee_structures';
+  info: {
+    displayName: 'FeeStructure';
+    pluralName: 'fee-structures';
+    singularName: 'fee-structure';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    academicYear: Schema.Attribute.String;
+    course: Schema.Attribute.Relation<'manyToOne', 'api::course.course'>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    developmentFee: Schema.Attribute.Decimal;
+    examFee: Schema.Attribute.Decimal;
+    gymkhanaFee: Schema.Attribute.Decimal;
+    labBreakageFee: Schema.Attribute.Decimal;
+    libraryFee: Schema.Attribute.Decimal;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::fee-structure.fee-structure'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    reimbursementAmount: Schema.Attribute.Decimal;
+    studnetCategory: Schema.Attribute.Enumeration<
+      ['Open', 'OBC', 'SC', 'ST', 'VJNT', 'NT', 'SBC', 'EWS', 'TFWS', 'Other']
+    >;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiGalleryGallery extends Struct.CollectionTypeSchema {
   collectionName: 'galleries';
   info: {
@@ -1066,6 +1191,50 @@ export interface ApiGlobalGlobal extends Struct.SingleTypeSchema {
     publishedAt: Schema.Attribute.DateTime;
     siteDescription: Schema.Attribute.Text & Schema.Attribute.Required;
     siteName: Schema.Attribute.String & Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiHallTicketHallTicket extends Struct.CollectionTypeSchema {
+  collectionName: 'hall_tickets';
+  info: {
+    displayName: 'HallTicket';
+    pluralName: 'hall-tickets';
+    singularName: 'hall-ticket';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    exam: Schema.Attribute.Relation<'oneToOne', 'api::exam.exam'>;
+    ExamCenter: Schema.Attribute.String;
+    generatedDate: Schema.Attribute.Date;
+    hallTicketNo: Schema.Attribute.String;
+    HallticketStatus: Schema.Attribute.Enumeration<['Draft', 'published']>;
+    HallticketSubjects: Schema.Attribute.Component<
+      'shared.hall-ticket-subject',
+      true
+    >;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::hall-ticket.hall-ticket'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    SeatNumber: Schema.Attribute.String;
+    students_admission: Schema.Attribute.Relation<
+      'oneToOne',
+      'api::students-admission.students-admission'
+    >;
+    studnetPhoto: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1391,6 +1560,7 @@ export interface ApiResultResult extends Struct.CollectionTypeSchema {
       'manyToOne',
       'api::department.department'
     >;
+    exam: Schema.Attribute.Relation<'oneToOne', 'api::exam.exam'>;
     isReleased: Schema.Attribute.Boolean;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
@@ -1411,7 +1581,10 @@ export interface ApiResultResult extends Struct.CollectionTypeSchema {
         'Semester 8',
       ]
     >;
-    student: Schema.Attribute.Relation<'manyToOne', 'api::student.student'>;
+    student: Schema.Attribute.Relation<
+      'manyToOne',
+      'api::students-admission.students-admission'
+    >;
     SubjectResult: Schema.Attribute.Component<'shared.subject-result', true>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -1552,7 +1725,6 @@ export interface ApiStudentsAdmissionStudentsAdmission
     admissionStatus: Schema.Attribute.Enumeration<
       ['Pending', 'Approved', 'Rejected', 'Waitlisted']
     > &
-      Schema.Attribute.Required &
       Schema.Attribute.DefaultTo<'Pending'>;
     applicationID: Schema.Attribute.String &
       Schema.Attribute.Required &
@@ -1571,6 +1743,10 @@ export interface ApiStudentsAdmissionStudentsAdmission
       'api::department.department'
     >;
     email: Schema.Attribute.Email;
+    fee_receipts: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::fee-receipt.fee-receipt'
+    >;
     fullName: Schema.Attribute.String &
       Schema.Attribute.Required &
       Schema.Attribute.SetMinMaxLength<{
@@ -1588,10 +1764,11 @@ export interface ApiStudentsAdmissionStudentsAdmission
     paymentStatus: Schema.Attribute.Enumeration<
       ['Pending', 'Paid', 'Failed', 'Refunded']
     > &
-      Schema.Attribute.Required &
       Schema.Attribute.DefaultTo<'Pending'>;
     phone: Schema.Attribute.BigInteger;
     publishedAt: Schema.Attribute.DateTime;
+    remainingFee: Schema.Attribute.Decimal;
+    results: Schema.Attribute.Relation<'oneToMany', 'api::result.result'>;
     Semester: Schema.Attribute.Enumeration<
       [
         'Semester 1',
@@ -1605,6 +1782,11 @@ export interface ApiStudentsAdmissionStudentsAdmission
       ]
     >;
     studentPhoto: Schema.Attribute.Media<'images'>;
+    studnetCategory: Schema.Attribute.Enumeration<
+      ['Open', 'OBC', 'SC', 'ST', 'VJNT', 'NT', 'SBC', 'EWS', 'TFWS', 'Other']
+    >;
+    totalPaidFee: Schema.Attribute.Decimal;
+    totalPayableFee: Schema.Attribute.Decimal;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1631,6 +1813,7 @@ export interface ApiSubjectSubject extends Struct.CollectionTypeSchema {
       'api::department.department'
     >;
     Document: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    exams: Schema.Attribute.Relation<'manyToMany', 'api::exam.exam'>;
     faculty: Schema.Attribute.Relation<'manyToOne', 'api::faculty.faculty'>;
     Grade: Schema.Attribute.Integer;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
@@ -2297,8 +2480,11 @@ declare module '@strapi/strapi' {
       'api::exam.exam': ApiExamExam;
       'api::faculty-leave.faculty-leave': ApiFacultyLeaveFacultyLeave;
       'api::faculty.faculty': ApiFacultyFaculty;
+      'api::fee-receipt.fee-receipt': ApiFeeReceiptFeeReceipt;
+      'api::fee-structure.fee-structure': ApiFeeStructureFeeStructure;
       'api::gallery.gallery': ApiGalleryGallery;
       'api::global.global': ApiGlobalGlobal;
+      'api::hall-ticket.hall-ticket': ApiHallTicketHallTicket;
       'api::home.home': ApiHomeHome;
       'api::leave-balance.leave-balance': ApiLeaveBalanceLeaveBalance;
       'api::navbar.navbar': ApiNavbarNavbar;

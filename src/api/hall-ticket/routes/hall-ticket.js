@@ -2,25 +2,25 @@
 
 const { createCoreRouter } = require('@strapi/strapi').factories;
 
-const defaultRouter = createCoreRouter('api::attendance.attendance');
+const defaultRouter = createCoreRouter('api::hall-ticket.hall-ticket');
 
 const customRoutes = [
   {
     method: 'POST',
-    path: '/attendances/bulk',
-    handler: 'attendance.bulkCreate',
+    path: '/hall-tickets/bulk',
+    handler: 'hall-ticket.bulkCreate',
     config: { policies: [], middlewares: [] },
   },
   {
     method: 'PUT',
-    path: '/attendances/bulk-update',
-    handler: 'attendance.bulkUpdate',
+    path: '/hall-tickets/bulk-update',
+    handler: 'hall-ticket.bulkUpdate',
     config: { policies: [], middlewares: [] },
   },
   {
     method: 'POST',
-    path: '/attendances/bulk-delete',
-    handler: 'attendance.bulkDelete',
+    path: '/hall-tickets/bulk-delete',
+    handler: 'hall-ticket.bulkDelete',
     config: { policies: [], middlewares: [] },
   },
 ];

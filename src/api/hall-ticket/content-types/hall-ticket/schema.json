@@ -1,0 +1,59 @@
+{
+  "kind": "collectionType",
+  "collectionName": "hall_tickets",
+  "info": {
+    "singularName": "hall-ticket",
+    "pluralName": "hall-tickets",
+    "displayName": "HallTicket"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "students_admission": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::students-admission.students-admission"
+    },
+    "exam": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::exam.exam"
+    },
+    "hallTicketNo": {
+      "type": "string"
+    },
+    "SeatNumber": {
+      "type": "string"
+    },
+    "ExamCenter": {
+      "type": "string"
+    },
+    "studnetPhoto": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "HallticketSubjects": {
+      "type": "component",
+      "component": "shared.hall-ticket-subject",
+      "repeatable": true
+    },
+    "HallticketStatus": {
+      "type": "enumeration",
+      "enum": [
+        "Draft",
+        "published"
+      ]
+    },
+    "generatedDate": {
+      "type": "date"
+    }
+  }
+}

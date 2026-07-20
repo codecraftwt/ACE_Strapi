@@ -56,7 +56,7 @@
     },
     "admissionStatus": {
       "type": "enumeration",
-      "required": true,
+      "required": false,
       "default": "Pending",
       "enum": [
         "Pending",
@@ -67,7 +67,7 @@
     },
     "paymentStatus": {
       "type": "enumeration",
-      "required": true,
+      "required": false,
       "default": "Pending",
       "enum": [
         "Pending",
@@ -107,6 +107,42 @@
       "relation": "oneToMany",
       "target": "api::attendance.attendance",
       "mappedBy": "students_admission"
+    },
+    "results": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::result.result",
+      "mappedBy": "student"
+    },
+    "studnetCategory": {
+      "type": "enumeration",
+      "enum": [
+        "Open",
+        "OBC",
+        "SC",
+        "ST",
+        "VJNT",
+        "NT",
+        "SBC",
+        "EWS",
+        "TFWS",
+        "Other"
+      ]
+    },
+    "fee_receipts": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::fee-receipt.fee-receipt",
+      "mappedBy": "students_admission"
+    },
+    "totalPayableFee": {
+      "type": "decimal"
+    },
+    "totalPaidFee": {
+      "type": "decimal"
+    },
+    "remainingFee": {
+      "type": "decimal"
     }
   }
 }

@@ -65,6 +65,12 @@
       "relation": "manyToOne",
       "target": "api::faculty.faculty",
       "inversedBy": "subjects"
+    },
+    "exams": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::exam.exam",
+      "inversedBy": "subjects"
     }
   }
 }

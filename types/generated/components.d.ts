@@ -28,6 +28,20 @@ export interface SharedBranchwiseplacement extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedHallTicketSubject extends Struct.ComponentSchema {
+  collectionName: 'components_shared_hall_ticket_subjects';
+  info: {
+    displayName: 'hall-ticket-subject';
+  };
+  attributes: {
+    examDate: Schema.Attribute.Date;
+    ExamDay: Schema.Attribute.String;
+    ExamRoom: Schema.Attribute.String;
+    ExamTime: Schema.Attribute.String;
+    subject: Schema.Attribute.Relation<'oneToOne', 'api::subject.subject'>;
+  };
+}
+
 export interface SharedMedia extends Struct.ComponentSchema {
   collectionName: 'components_shared_media';
   info: {
@@ -127,6 +141,7 @@ declare module '@strapi/strapi' {
     export interface ComponentSchemas {
       'shared.academic-subject': SharedAcademicSubject;
       'shared.branchwiseplacement': SharedBranchwiseplacement;
+      'shared.hall-ticket-subject': SharedHallTicketSubject;
       'shared.media': SharedMedia;
       'shared.placement-officer': SharedPlacementOfficer;
       'shared.quote': SharedQuote;

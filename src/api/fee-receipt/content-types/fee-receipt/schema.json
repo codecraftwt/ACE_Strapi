@@ -1,0 +1,75 @@
+{
+  "kind": "collectionType",
+  "collectionName": "fee_receipts",
+  "info": {
+    "singularName": "fee-receipt",
+    "pluralName": "fee-receipts",
+    "displayName": "feeReceipt"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "students_admission": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::students-admission.students-admission",
+      "inversedBy": "fee_receipts"
+    },
+    "receiptNumber": {
+      "type": "string"
+    },
+    "paymentAmount": {
+      "type": "decimal"
+    },
+    "paymentDate": {
+      "type": "date"
+    },
+    "Paymethod": {
+      "type": "enumeration",
+      "required": false,
+      "enum": [
+        "Cash",
+        "UPI",
+        "Card",
+        "Bank Transfer",
+        "Cheque",
+        "Online"
+      ]
+    },
+    "baseFee": {
+      "type": "decimal"
+    },
+    "reimbursementAmount": {
+      "type": "decimal"
+    },
+    "examFee": {
+      "type": "decimal"
+    },
+    "developmentFee": {
+      "type": "decimal"
+    },
+    "libraryFee": {
+      "type": "decimal"
+    },
+    "gymkhanaFee": {
+      "type": "decimal"
+    },
+    "totalPayableFee": {
+      "type": "decimal"
+    },
+    "previousPaidFee": {
+      "type": "decimal"
+    },
+    "currentPaymentAmount": {
+      "type": "decimal"
+    },
+    "totalPaidFee": {
+      "type": "decimal"
+    },
+    "remainingFee": {
+      "type": "decimal"
+    }
+  }
+}

@@ -14,7 +14,7 @@
     "student": {
       "type": "relation",
       "relation": "manyToOne",
-      "target": "api::student.student",
+      "target": "api::students-admission.students-admission",
       "inversedBy": "results"
     },
     "course": {
@@ -52,6 +52,11 @@
     },
     "approvedBy": {
       "type": "boolean"
+    },
+    "exam": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::exam.exam"
     }
   }
 }
