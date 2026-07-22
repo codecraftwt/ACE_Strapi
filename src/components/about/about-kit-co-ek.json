@@ -1,0 +1,42 @@
+{
+  "collectionName": "components_about_about_kit_co_eks",
+  "info": {
+    "displayName": "AboutKITCoEK"
+  },
+  "options": {},
+  "attributes": {
+    "College_Name": {
+      "type": "string"
+    },
+    "AboutUs": {
+      "type": "blocks"
+    },
+    "Images": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "Vision": {
+      "type": "blocks"
+    },
+    "Mission": {
+      "type": "blocks"
+    },
+    "VisionImg": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    }
+  },
+  "config": {}
+}

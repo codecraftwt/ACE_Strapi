@@ -1,0 +1,43 @@
+{
+  "kind": "collectionType",
+  "collectionName": "institutional_documents",
+  "info": {
+    "singularName": "institutional-document",
+    "pluralName": "institutional-documents",
+    "displayName": "Institutional Document"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "category": {
+      "type": "enumeration",
+      "enum": [
+        "NIRF",
+        "IPR",
+        "Paper Publication"
+      ],
+      "required": true
+    },
+    "year": {
+      "type": "string",
+      "required": true
+    },
+    "file": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "files"
+      ]
+    },
+    "sortOrder": {
+      "type": "integer",
+      "default": 0
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_shared_subitems",
+  "info": {
+    "displayName": "subitems"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "link": {
+      "type": "string"
+    },
+    "nestedNavitem": {
+      "type": "component",
+      "component": "shared.nested-navitem",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

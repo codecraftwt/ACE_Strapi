@@ -13,19 +13,57 @@
   "pluginOptions": {},
   "attributes": {
     "title": {
-      "type": "string"
+      "type": "text"
     },
-    "History": {
-      "type": "blocks"
+    "AboutKITCoEK": {
+      "type": "component",
+      "component": "about.about-kit-co-ek",
+      "repeatable": false
     },
-    "academicExcellence": {
-      "type": "blocks"
+    "founderstrustees": {
+      "type": "component",
+      "component": "about.founders-trustees",
+      "repeatable": true
     },
-    "Placements": {
-      "type": "blocks"
+    "chairmanMessage": {
+      "type": "component",
+      "component": "about.chairman-message",
+      "repeatable": false
     },
-    "campusLife": {
-      "type": "blocks"
+    "boardOfDirectors": {
+      "type": "component",
+      "component": "about.board-member",
+      "repeatable": true
+    },
+    "governingCouncil": {
+      "type": "component",
+      "component": "about.governing-council-member",
+      "repeatable": true
+    },
+    "directorMessage": {
+      "type": "component",
+      "component": "about.director-message",
+      "repeatable": false
+    },
+    "collegeAdministration": {
+      "type": "component",
+      "component": "about.college-admin-member",
+      "repeatable": true
+    },
+    "officeAdministration": {
+      "type": "component",
+      "component": "about.office-admin-member",
+      "repeatable": true
+    },
+    "milestones": {
+      "type": "component",
+      "component": "about.milestone",
+      "repeatable": true
+    },
+    "iqac": {
+      "type": "component",
+      "component": "about.iqac",
+      "repeatable": false
     }
   }
 }

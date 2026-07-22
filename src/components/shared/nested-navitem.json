@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_shared_nested_navitems",
+  "info": {
+    "displayName": "NestedNavitem"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "link": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

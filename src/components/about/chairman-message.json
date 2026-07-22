@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_about_chairman_messages",
+  "info": {
+    "displayName": "ChairmanMessage"
+  },
+  "options": {},
+  "attributes": {
+    "personName": {
+      "type": "string"
+    },
+    "designation": {
+      "type": "string"
+    },
+    "message": {
+      "type": "blocks"
+    },
+    "photo": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ]
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_about_iqacs",
+  "info": {
+    "displayName": "IQAC"
+  },
+  "options": {},
+  "attributes": {
+    "introductionText": {
+      "type": "text"
+    },
+    "ssrDocumentHref": {
+      "type": "string"
+    },
+    "iqacLinks": {
+      "type": "component",
+      "repeatable": true,
+      "component": "about.iqac-link"
+    },
+    "naacRecords": {
+      "type": "component",
+      "repeatable": true,
+      "component": "about.iqac-link"
+    }
+  }
+}

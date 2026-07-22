@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_about_college_admin_members",
+  "info": {
+    "displayName": "CollegeAdminMember"
+  },
+  "options": {},
+  "attributes": {
+    "personName": {
+      "type": "string"
+    },
+    "designation": {
+      "type": "string"
+    },
+    "photo": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ]
+    }
+  }
+}

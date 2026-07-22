@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_shared_nav_buttons",
+  "info": {
+    "displayName": "NavButtons"
+  },
+  "options": {},
+  "attributes": {
+    "buttontext": {
+      "type": "string"
+    },
+    "action": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

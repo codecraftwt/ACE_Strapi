@@ -24,11 +24,15 @@
     "collegeName": {
       "type": "string"
     },
-    "navItems": {
-      "type": "json"
+    "navitems": {
+      "type": "component",
+      "component": "shared.navitems",
+      "repeatable": true
     },
-    "navabrButton": {
-      "type": "string"
+    "navbuttons": {
+      "type": "component",
+      "component": "shared.nav-buttons",
+      "repeatable": true
     }
   }
 }

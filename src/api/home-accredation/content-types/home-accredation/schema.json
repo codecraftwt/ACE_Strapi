@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "home_accredations",
+  "info": {
+    "singularName": "home-accredation",
+    "pluralName": "home-accredations",
+    "displayName": "HomeAccredation"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Tiltle": {
+      "type": "string"
+    },
+    "descriptions": {
+      "type": "string"
+    },
+    "Logos": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    }
+  }
+}

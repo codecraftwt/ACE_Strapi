@@ -10,6 +10,7 @@ const { validateDepartmentAccess } = require('./helpers/access-control');
 const { extractDepartmentDocumentId } = require('./helpers/extract-document-id');
 const { isSuperAdmin, isHod } = require('./helpers/role-check');
 const { getAdminDepartment } = require('./helpers/get-admin-department');
+const { runSeeders } = require('./seed');
 
 const DEPARTMENT_UID = 'api::department.department';
 
@@ -236,6 +237,18 @@ module.exports = {
     console.log(
       '✅ Same Department RBAC Registered'
     );
+
+    /*
+     * Database Seeding
+     * Set FORCE_SEED=true to seed resources.
+     */
+    if (process.env.FORCE_SEED !== 'true') {
+      console.log(
+        'Database seeding is disabled. Start with FORCE_SEED=true to seed.'
+      );
+    } else {
+      await runSeeders(strapi);
+    }
 
   },
 

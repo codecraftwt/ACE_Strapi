@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_about_founders_trustees",
+  "info": {
+    "displayName": "FoundersTrustees"
+  },
+  "options": {},
+  "attributes": {
+    "PersonName": {
+      "type": "text"
+    },
+    "Designation": {
+      "type": "text"
+    },
+    "Photo": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    }
+  },
+  "config": {}
+}

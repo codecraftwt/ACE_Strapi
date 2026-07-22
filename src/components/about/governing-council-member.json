@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_about_governing_council_members",
+  "info": {
+    "displayName": "GoverningCouncilMember"
+  },
+  "options": {},
+  "attributes": {
+    "serialNo": {
+      "type": "integer"
+    },
+    "personName": {
+      "type": "string"
+    },
+    "designation": {
+      "type": "text"
+    },
+    "position": {
+      "type": "text"
+    }
+  }
+}

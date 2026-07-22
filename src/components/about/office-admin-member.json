@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_about_office_admin_members",
+  "info": {
+    "displayName": "OfficeAdminMember"
+  },
+  "options": {},
+  "attributes": {
+    "personName": {
+      "type": "string"
+    },
+    "designation": {
+      "type": "string"
+    },
+    "mobileNo": {
+      "type": "string"
+    }
+  }
+}

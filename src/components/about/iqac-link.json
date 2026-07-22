@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_about_iqac_links",
+  "info": {
+    "displayName": "IQAC Link"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "href": {
+      "type": "string"
+    }
+  }
+}

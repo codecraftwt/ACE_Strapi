@@ -489,18 +489,42 @@ export interface ApiAboutAbout extends Struct.SingleTypeSchema {
     draftAndPublish: false;
   };
   attributes: {
-    academicExcellence: Schema.Attribute.Blocks;
-    campusLife: Schema.Attribute.Blocks;
+    AboutKITCoEK: Schema.Attribute.Component<'about.about-kit-co-ek', false>;
+    boardOfDirectors: Schema.Attribute.Component<'about.board-member', true>;
+    chairmanMessage: Schema.Attribute.Component<
+      'about.chairman-message',
+      false
+    >;
+    collegeAdministration: Schema.Attribute.Component<
+      'about.college-admin-member',
+      true
+    >;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    History: Schema.Attribute.Blocks;
+    directorMessage: Schema.Attribute.Component<
+      'about.director-message',
+      false
+    >;
+    founderstrustees: Schema.Attribute.Component<
+      'about.founders-trustees',
+      true
+    >;
+    governingCouncil: Schema.Attribute.Component<
+      'about.governing-council-member',
+      true
+    >;
+    iqac: Schema.Attribute.Component<'about.iqac', false>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::about.about'> &
       Schema.Attribute.Private;
-    Placements: Schema.Attribute.Blocks;
+    milestones: Schema.Attribute.Component<'about.milestone', true>;
+    officeAdministration: Schema.Attribute.Component<
+      'about.office-admin-member',
+      true
+    >;
     publishedAt: Schema.Attribute.DateTime;
-    title: Schema.Attribute.String;
+    title: Schema.Attribute.Text;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1241,6 +1265,40 @@ export interface ApiHallTicketHallTicket extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiHomeAccredationHomeAccredation
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'home_accredations';
+  info: {
+    displayName: 'HomeAccredation';
+    pluralName: 'home-accredations';
+    singularName: 'home-accredation';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    descriptions: Schema.Attribute.String;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::home-accredation.home-accredation'
+    > &
+      Schema.Attribute.Private;
+    Logos: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
+    publishedAt: Schema.Attribute.DateTime;
+    Tiltle: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiHomeHome extends Struct.CollectionTypeSchema {
   collectionName: 'homes';
   info: {
@@ -1272,6 +1330,42 @@ export interface ApiHomeHome extends Struct.CollectionTypeSchema {
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     Vision: Schema.Attribute.Blocks;
+  };
+}
+
+export interface ApiInstitutionalDocumentInstitutionalDocument
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'institutional_documents';
+  info: {
+    displayName: 'Institutional Document';
+    pluralName: 'institutional-documents';
+    singularName: 'institutional-document';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    category: Schema.Attribute.Enumeration<
+      ['NIRF', 'IPR', 'Paper Publication']
+    > &
+      Schema.Attribute.Required;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    file: Schema.Attribute.Media<'files'>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::institutional-document.institutional-document'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    sortOrder: Schema.Attribute.Integer & Schema.Attribute.DefaultTo<0>;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    year: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
 
@@ -1329,8 +1423,8 @@ export interface ApiNavbarNavbar extends Struct.CollectionTypeSchema {
     > &
       Schema.Attribute.Private;
     logo: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    navabrButton: Schema.Attribute.String;
-    navItems: Schema.Attribute.JSON;
+    navbuttons: Schema.Attribute.Component<'shared.nav-buttons', true>;
+    navitems: Schema.Attribute.Component<'shared.navitems', true>;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -1622,6 +1716,38 @@ export interface ApiSendEmailSendEmail extends Struct.CollectionTypeSchema {
     students: Schema.Attribute.Relation<'oneToMany', 'api::student.student'>;
     subject: Schema.Attribute.Text;
     Title: Schema.Attribute.Text;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiSliderSlider extends Struct.CollectionTypeSchema {
+  collectionName: 'sliders';
+  info: {
+    displayName: 'Slider';
+    pluralName: 'sliders';
+    singularName: 'slider';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    Imges: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::slider.slider'
+    > &
+      Schema.Attribute.Private;
+    Order: Schema.Attribute.Integer;
+    publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -2485,7 +2611,9 @@ declare module '@strapi/strapi' {
       'api::gallery.gallery': ApiGalleryGallery;
       'api::global.global': ApiGlobalGlobal;
       'api::hall-ticket.hall-ticket': ApiHallTicketHallTicket;
+      'api::home-accredation.home-accredation': ApiHomeAccredationHomeAccredation;
       'api::home.home': ApiHomeHome;
+      'api::institutional-document.institutional-document': ApiInstitutionalDocumentInstitutionalDocument;
       'api::leave-balance.leave-balance': ApiLeaveBalanceLeaveBalance;
       'api::navbar.navbar': ApiNavbarNavbar;
       'api::notice.notice': ApiNoticeNotice;
@@ -2495,6 +2623,7 @@ declare module '@strapi/strapi' {
       'api::response.response': ApiResponseResponse;
       'api::result.result': ApiResultResult;
       'api::send-email.send-email': ApiSendEmailSendEmail;
+      'api::slider.slider': ApiSliderSlider;
       'api::statistic.statistic': ApiStatisticStatistic;
       'api::student.student': ApiStudentStudent;
       'api::students-admission.students-admission': ApiStudentsAdmissionStudentsAdmission;
