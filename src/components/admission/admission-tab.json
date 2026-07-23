@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_admission_admission_tabs",
+  "info": {
+    "displayName": "Admission Tab"
+  },
+  "attributes": {
+    "tabName": {
+      "type": "string",
+      "required": true
+    },
+    "documents": {
+      "type": "component",
+      "repeatable": true,
+      "component": "admission.document-item"
+    }
+  }
+}

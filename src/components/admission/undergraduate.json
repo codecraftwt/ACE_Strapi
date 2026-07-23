@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_admission_undergraduates",
+  "info": {
+    "displayName": "Undergraduate",
+    "icon": "book"
+  },
+  "attributes": {
+    "academicYears": {
+      "type": "component",
+      "repeatable": true,
+      "component": "admission.academic-year"
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_admission_contact_infos",
+  "info": {
+    "displayName": "Contact Info"
+  },
+  "attributes": {
+    "contacts": {
+      "type": "component",
+      "repeatable": true,
+      "component": "admission.contact-entry"
+    }
+  }
+}

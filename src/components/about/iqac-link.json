@@ -10,6 +10,11 @@
     },
     "href": {
       "type": "string"
+    },
+    "IQAC_file": {
+      "type": "component",
+      "component": "about.iqac-filedata",
+      "repeatable": true
     }
   }
 }

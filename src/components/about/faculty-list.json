@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_about_faculty_lists",
+  "info": {
+    "displayName": "Faculty List"
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "link": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

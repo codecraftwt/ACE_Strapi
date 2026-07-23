@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_admission_institute_codes",
+  "info": {
+    "displayName": "Institute Code"
+  },
+  "attributes": {
+    "code": {
+      "type": "string",
+      "required": true
+    },
+    "courses": {
+      "type": "component",
+      "repeatable": true,
+      "component": "admission.course"
+    }
+  }
+}

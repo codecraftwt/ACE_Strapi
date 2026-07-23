@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_admission_contact_entries",
+  "info": {
+    "displayName": "Contact Entry"
+  },
+  "attributes": {
+    "department": {
+      "type": "string",
+      "required": true
+    },
+    "faculties": {
+      "type": "component",
+      "repeatable": true,
+      "component": "admission.faculty-contact"
+    }
+  }
+}

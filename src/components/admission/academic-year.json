@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_admission_academic_years",
+  "info": {
+    "displayName": "Academic Year"
+  },
+  "attributes": {
+    "year": {
+      "type": "string",
+      "required": true
+    },
+    "tabs": {
+      "type": "component",
+      "repeatable": true,
+      "component": "admission.admission-tab"
+    }
+  }
+}

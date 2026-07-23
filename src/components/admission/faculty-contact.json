@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_admission_faculty_contacts",
+  "info": {
+    "displayName": "Faculty Contact"
+  },
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "designation": {
+      "type": "string"
+    },
+    "mobile": {
+      "type": "string"
+    }
+  }
+}

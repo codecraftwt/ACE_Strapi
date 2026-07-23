@@ -64,6 +64,21 @@
       "type": "component",
       "component": "about.iqac",
       "repeatable": false
+    },
+    "nirfDocuments": {
+      "type": "component",
+      "component": "about.nirf-documents",
+      "repeatable": false
+    },
+    "facultyList": {
+      "type": "component",
+      "repeatable": true,
+      "component": "about.faculty-list"
+    },
+    "accreditation": {
+      "type": "component",
+      "repeatable": false,
+      "component": "about.accreditation"
     }
   }
 }

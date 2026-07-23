@@ -18,6 +18,29 @@ export interface AboutAboutKitCoEk extends Struct.ComponentSchema {
   };
 }
 
+export interface AboutAccreditation extends Struct.ComponentSchema {
+  collectionName: 'components_about_accreditations';
+  info: {
+    displayName: 'Accreditation';
+  };
+  attributes: {
+    aicteApproval: Schema.Attribute.Component<'about.aicte-approval', true>;
+    nbaNaac: Schema.Attribute.Component<'about.nba-naac', true>;
+  };
+}
+
+export interface AboutAicteApproval extends Struct.ComponentSchema {
+  collectionName: 'components_about_aicte_approvals';
+  info: {
+    displayName: 'AICTE Approval';
+  };
+  attributes: {
+    academicYear: Schema.Attribute.String & Schema.Attribute.Required;
+    downloadDocument: Schema.Attribute.String & Schema.Attribute.Required;
+    serialNo: Schema.Attribute.Integer;
+  };
+}
+
 export interface AboutBoardMember extends Struct.ComponentSchema {
   collectionName: 'components_about_board_members';
   info: {
@@ -68,6 +91,17 @@ export interface AboutDirectorMessage extends Struct.ComponentSchema {
   };
 }
 
+export interface AboutFacultyList extends Struct.ComponentSchema {
+  collectionName: 'components_about_faculty_lists';
+  info: {
+    displayName: 'Faculty List';
+  };
+  attributes: {
+    link: Schema.Attribute.String & Schema.Attribute.Required;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
 export interface AboutFoundersTrustees extends Struct.ComponentSchema {
   collectionName: 'components_about_founders_trustees';
   info: {
@@ -100,9 +134,38 @@ export interface AboutIqac extends Struct.ComponentSchema {
   };
   attributes: {
     introductionText: Schema.Attribute.Text;
+    iqacCommitteeMembers: Schema.Attribute.Component<
+      'about.iqac-committee-member',
+      true
+    >;
     iqacLinks: Schema.Attribute.Component<'about.iqac-link', true>;
     naacRecords: Schema.Attribute.Component<'about.iqac-link', true>;
-    ssrDocumentHref: Schema.Attribute.String;
+  };
+}
+
+export interface AboutIqacCommitteeMember extends Struct.ComponentSchema {
+  collectionName: 'components_about_iqac_committee_members';
+  info: {
+    displayName: 'IQAC Committee Member';
+    icon: 'user';
+  };
+  attributes: {
+    designation: Schema.Attribute.Text & Schema.Attribute.Required;
+    personName: Schema.Attribute.String & Schema.Attribute.Required;
+    position: Schema.Attribute.String & Schema.Attribute.Required;
+    serialNo: Schema.Attribute.Integer & Schema.Attribute.Required;
+  };
+}
+
+export interface AboutIqacFiledata extends Struct.ComponentSchema {
+  collectionName: 'components_about_iqac_filedata';
+  info: {
+    displayName: 'IQAC_Filedata';
+  };
+  attributes: {
+    File_Name: Schema.Attribute.Text;
+    Link: Schema.Attribute.Text;
+    Title: Schema.Attribute.String;
   };
 }
 
@@ -113,6 +176,7 @@ export interface AboutIqacLink extends Struct.ComponentSchema {
   };
   attributes: {
     href: Schema.Attribute.String;
+    IQAC_file: Schema.Attribute.Component<'about.iqac-filedata', true>;
     title: Schema.Attribute.String;
   };
 }
@@ -128,6 +192,66 @@ export interface AboutMilestone extends Struct.ComponentSchema {
   };
 }
 
+export interface AboutNbaNaac extends Struct.ComponentSchema {
+  collectionName: 'components_about_nba_naacs';
+  info: {
+    displayName: 'NBA NAAC';
+  };
+  attributes: {
+    link: Schema.Attribute.String & Schema.Attribute.Required;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface AboutNirfCategory extends Struct.ComponentSchema {
+  collectionName: 'components_about_nirf_categories';
+  info: {
+    displayName: 'NIRF Category';
+    icon: 'folder';
+  };
+  attributes: {
+    color: Schema.Attribute.String & Schema.Attribute.Required;
+    name: Schema.Attribute.Enumeration<['NIRF', 'IPR', 'Paper Publication']> &
+      Schema.Attribute.Required;
+    yearGroups: Schema.Attribute.Component<'about.nirf-year', true>;
+  };
+}
+
+export interface AboutNirfDocument extends Struct.ComponentSchema {
+  collectionName: 'components_about_nirf_documents';
+  info: {
+    displayName: 'NIRF Document';
+    icon: 'file';
+  };
+  attributes: {
+    href: Schema.Attribute.Text & Schema.Attribute.Required;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface AboutNirfDocuments extends Struct.ComponentSchema {
+  collectionName: 'components_about_nirf_documents_containers';
+  info: {
+    displayName: 'NIRF Documents';
+    icon: 'folder-open';
+  };
+  attributes: {
+    categories: Schema.Attribute.Component<'about.nirf-category', true>;
+  };
+}
+
+export interface AboutNirfYear extends Struct.ComponentSchema {
+  collectionName: 'components_about_nirf_years';
+  info: {
+    displayName: 'NIRF Year';
+    icon: 'calendar';
+  };
+  attributes: {
+    documents: Schema.Attribute.Component<'about.nirf-document', true>;
+    year: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
 export interface AboutOfficeAdminMember extends Struct.ComponentSchema {
   collectionName: 'components_about_office_admin_members';
   info: {
@@ -137,6 +261,109 @@ export interface AboutOfficeAdminMember extends Struct.ComponentSchema {
     designation: Schema.Attribute.String;
     mobileNo: Schema.Attribute.String;
     personName: Schema.Attribute.String;
+  };
+}
+
+export interface AdmissionAcademicYear extends Struct.ComponentSchema {
+  collectionName: 'components_admission_academic_years';
+  info: {
+    displayName: 'Academic Year';
+  };
+  attributes: {
+    tabs: Schema.Attribute.Component<'admission.admission-tab', true>;
+    year: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface AdmissionAdmissionTab extends Struct.ComponentSchema {
+  collectionName: 'components_admission_admission_tabs';
+  info: {
+    displayName: 'Admission Tab';
+  };
+  attributes: {
+    documents: Schema.Attribute.Component<'admission.document-item', true>;
+    tabName: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface AdmissionContactEntry extends Struct.ComponentSchema {
+  collectionName: 'components_admission_contact_entries';
+  info: {
+    displayName: 'Contact Entry';
+  };
+  attributes: {
+    department: Schema.Attribute.String & Schema.Attribute.Required;
+    faculties: Schema.Attribute.Component<'admission.faculty-contact', true>;
+  };
+}
+
+export interface AdmissionContactInfo extends Struct.ComponentSchema {
+  collectionName: 'components_admission_contact_infos';
+  info: {
+    displayName: 'Contact Info';
+  };
+  attributes: {
+    contacts: Schema.Attribute.Component<'admission.contact-entry', true>;
+  };
+}
+
+export interface AdmissionCourse extends Struct.ComponentSchema {
+  collectionName: 'components_admission_courses';
+  info: {
+    displayName: 'Course';
+  };
+  attributes: {
+    courseDescription: Schema.Attribute.String;
+    courseName: Schema.Attribute.String & Schema.Attribute.Required;
+    generalCode: Schema.Attribute.String;
+    generalIntake: Schema.Attribute.Integer;
+    tfwsCode: Schema.Attribute.String;
+    tfwsIntake: Schema.Attribute.Integer;
+  };
+}
+
+export interface AdmissionDocumentItem extends Struct.ComponentSchema {
+  collectionName: 'components_admission_document_items';
+  info: {
+    displayName: 'Document Item';
+  };
+  attributes: {
+    documentLink: Schema.Attribute.String & Schema.Attribute.Required;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface AdmissionFacultyContact extends Struct.ComponentSchema {
+  collectionName: 'components_admission_faculty_contacts';
+  info: {
+    displayName: 'Faculty Contact';
+  };
+  attributes: {
+    designation: Schema.Attribute.String;
+    mobile: Schema.Attribute.String;
+    name: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface AdmissionInstituteCode extends Struct.ComponentSchema {
+  collectionName: 'components_admission_institute_codes';
+  info: {
+    displayName: 'Institute Code';
+  };
+  attributes: {
+    code: Schema.Attribute.String & Schema.Attribute.Required;
+    courses: Schema.Attribute.Component<'admission.course', true>;
+  };
+}
+
+export interface AdmissionUndergraduate extends Struct.ComponentSchema {
+  collectionName: 'components_admission_undergraduates';
+  info: {
+    displayName: 'Undergraduate';
+    icon: 'book';
+  };
+  attributes: {
+    academicYears: Schema.Attribute.Component<'admission.academic-year', true>;
   };
 }
 
@@ -346,16 +573,35 @@ declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
       'about.about-kit-co-ek': AboutAboutKitCoEk;
+      'about.accreditation': AboutAccreditation;
+      'about.aicte-approval': AboutAicteApproval;
       'about.board-member': AboutBoardMember;
       'about.chairman-message': AboutChairmanMessage;
       'about.college-admin-member': AboutCollegeAdminMember;
       'about.director-message': AboutDirectorMessage;
+      'about.faculty-list': AboutFacultyList;
       'about.founders-trustees': AboutFoundersTrustees;
       'about.governing-council-member': AboutGoverningCouncilMember;
       'about.iqac': AboutIqac;
+      'about.iqac-committee-member': AboutIqacCommitteeMember;
+      'about.iqac-filedata': AboutIqacFiledata;
       'about.iqac-link': AboutIqacLink;
       'about.milestone': AboutMilestone;
+      'about.nba-naac': AboutNbaNaac;
+      'about.nirf-category': AboutNirfCategory;
+      'about.nirf-document': AboutNirfDocument;
+      'about.nirf-documents': AboutNirfDocuments;
+      'about.nirf-year': AboutNirfYear;
       'about.office-admin-member': AboutOfficeAdminMember;
+      'admission.academic-year': AdmissionAcademicYear;
+      'admission.admission-tab': AdmissionAdmissionTab;
+      'admission.contact-entry': AdmissionContactEntry;
+      'admission.contact-info': AdmissionContactInfo;
+      'admission.course': AdmissionCourse;
+      'admission.document-item': AdmissionDocumentItem;
+      'admission.faculty-contact': AdmissionFacultyContact;
+      'admission.institute-code': AdmissionInstituteCode;
+      'admission.undergraduate': AdmissionUndergraduate;
       'shared.about-kit-co-ek': SharedAboutKitCoEk;
       'shared.academic-subject': SharedAcademicSubject;
       'shared.branchwiseplacement': SharedBranchwiseplacement;

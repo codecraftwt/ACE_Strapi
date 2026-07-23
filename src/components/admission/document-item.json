@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_admission_document_items",
+  "info": {
+    "displayName": "Document Item"
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "documentLink": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

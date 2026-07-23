@@ -1,0 +1,33 @@
+{
+  "kind": "singleType",
+  "collectionName": "admissions",
+  "info": {
+    "singularName": "admission",
+    "pluralName": "admissions",
+    "displayName": "Admission"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "text"
+    },
+    "undergraduate": {
+      "type": "component",
+      "component": "admission.undergraduate",
+      "repeatable": false
+    },
+    "instituteCode": {
+      "type": "component",
+      "component": "admission.institute-code",
+      "repeatable": false
+    },
+    "contactInfo": {
+      "type": "component",
+      "component": "admission.contact-info",
+      "repeatable": false
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_about_nirf_categories",
+  "info": {
+    "displayName": "NIRF Category",
+    "icon": "folder"
+  },
+  "attributes": {
+    "name": {
+      "type": "enumeration",
+      "enum": ["NIRF", "IPR", "Paper Publication"],
+      "required": true
+    },
+    "color": {
+      "type": "string",
+      "required": true
+    },
+    "yearGroups": {
+      "type": "component",
+      "repeatable": true,
+      "component": "about.nirf-year"
+    }
+  }
+}

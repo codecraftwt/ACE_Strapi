@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_about_accreditations",
+  "info": {
+    "displayName": "Accreditation"
+  },
+  "attributes": {
+    "aicteApproval": {
+      "type": "component",
+      "repeatable": true,
+      "component": "about.aicte-approval"
+    },
+    "nbaNaac": {
+      "type": "component",
+      "repeatable": true,
+      "component": "about.nba-naac"
+    }
+  }
+}

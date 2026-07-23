@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_about_nirf_years",
+  "info": {
+    "displayName": "NIRF Year",
+    "icon": "calendar"
+  },
+  "attributes": {
+    "year": {
+      "type": "string",
+      "required": true
+    },
+    "documents": {
+      "type": "component",
+      "repeatable": true,
+      "component": "about.nirf-document"
+    }
+  }
+}

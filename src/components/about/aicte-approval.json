@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_about_aicte_approvals",
+  "info": {
+    "displayName": "AICTE Approval"
+  },
+  "attributes": {
+    "serialNo": {
+      "type": "integer"
+    },
+    "academicYear": {
+      "type": "string",
+      "required": true
+    },
+    "downloadDocument": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

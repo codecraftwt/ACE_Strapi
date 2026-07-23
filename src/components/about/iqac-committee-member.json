@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_about_iqac_committee_members",
+  "info": {
+    "displayName": "IQAC Committee Member",
+    "icon": "user"
+  },
+  "attributes": {
+    "serialNo": {
+      "type": "integer",
+      "required": true
+    },
+    "personName": {
+      "type": "string",
+      "required": true
+    },
+    "designation": {
+      "type": "text",
+      "required": true
+    },
+    "position": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

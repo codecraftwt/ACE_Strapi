@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_admission_courses",
+  "info": {
+    "displayName": "Course"
+  },
+  "attributes": {
+    "courseName": {
+      "type": "string",
+      "required": true
+    },
+    "courseDescription": {
+      "type": "string"
+    },
+    "generalIntake": {
+      "type": "integer"
+    },
+    "generalCode": {
+      "type": "string"
+    },
+    "tfwsIntake": {
+      "type": "integer"
+    },
+    "tfwsCode": {
+      "type": "string"
+    }
+  }
+}

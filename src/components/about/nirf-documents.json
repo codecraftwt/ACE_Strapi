@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_about_nirf_documents_containers",
+  "info": {
+    "displayName": "NIRF Documents",
+    "icon": "folder-open"
+  },
+  "attributes": {
+    "categories": {
+      "type": "component",
+      "repeatable": true,
+      "component": "about.nirf-category"
+    }
+  }
+}

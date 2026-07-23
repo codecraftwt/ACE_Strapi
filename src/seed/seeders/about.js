@@ -228,9 +228,73 @@ const MILESTONES = [
   { year: '2024', description: 'Empowered Autonomy Status to KIT, INR. 5 Crore From MSInS for TBI at KIT' },
 ];
 
+const NIRF_DOCUMENTS_DATA = {
+  categories: [
+    {
+      name: 'NIRF',
+      color: '#24346d',
+      yearGroups: [
+        {
+          year: 'NIRF 2026',
+          documents: [
+            { title: 'KIT NIRF Engineering 2026', href: 'documents/About/nirf/2026/KIT NIRF Engineering 2026.pdf' },
+            { title: 'KIT NIRF Innovation 2026', href: 'documents/About/nirf/2026/KIT NIRF Innovation 2026.pdf' },
+            { title: 'KIT NIRF Overall 2026', href: 'documents/About/nirf/2026/KIT NIRF Overall 2026.pdf' },
+          ],
+        },
+        {
+          year: 'NIRF 2025',
+          documents: [
+            { title: 'NIRF 2025 Engineering', href: 'documents/About/nirf/2024/NIRF 2025 ENGINEERING.pdf' },
+            { title: 'NIRF 2025 Innovation', href: 'documents/About/nirf/2024/NIRF-2025-INNOVATION.pdf' },
+            { title: 'NIRF 2025 Overall', href: 'documents/About/nirf/2024/NIRF 2025 OVERALL.pdf' },
+          ],
+        },
+        {
+          year: 'NIRF 2024',
+          documents: [
+            { title: 'NIRF 2024 Engineering', href: 'documents/About/nirf/2024/NIRF-2024-(Engineering)-IR-E-C-10996.pdf' },
+            { title: 'NIRF 2024 Innovation', href: 'documents/About/nirf/2024/NIRF-2024-(Innovation)-IR-I-C-10996.pdf' },
+            { title: 'NIRF 2024 Overall', href: 'documents/About/nirf/2024/NIRF-2024-(Overall)-IR-O-C-10996.pdf' },
+          ],
+        },
+      ],
+    },
+    {
+      name: 'IPR',
+      color: '#145a32',
+      yearGroups: [
+        {
+          year: 'IPR 2025',
+          documents: [
+            { title: 'Intellectual Property Rights 2025', href: 'documents/About/nirf/IPR/IPR_Summary_2026.pdf' },
+          ],
+        },
+      ],
+    },
+    {
+      name: 'Paper Publication',
+      color: '#6b3a2a',
+      yearGroups: [
+        {
+          year: 'AY: 2025-26',
+          documents: [
+            { title: 'Paper Publications 2025-26', href: 'documents/About/nirf/paper/Paper Publication Details-2025-26.pdf' },
+          ],
+        },
+        {
+          year: 'AY: 2024-25',
+          documents: [
+            { title: 'Paper Publications 2024–25', href: 'documents/academics/R_D/Research Papers Published upto 25-26 April 2026.pdf' },
+          ],
+        },
+      ],
+    },
+  ],
+};
+
 const IQAC_DATA = {
   introductionText: 'In pursuance of the National Action Plan of the National Assessment and Accreditation Council (NAAC), Bangalore, for performance evaluation, assessment and accreditation and quality up gradation of institutions of higher education, the NAAC proposes that every accredited institution should establish an Internal Quality Assurance Cell (IQAC) as a post-accreditation quality sustenance measure. Since quality enhancement is a continuous process, the IQAC will become a part of an institution\'s system and work towards realizing the goals of quality enhancement and sustenance. The prime task of the IQAC is to develop a system for conscious, consistent and catalytic improvement in the performance of institutions. The IQAC will make a significant and meaningful contribution in the post-accreditation phase of institutions. During the post-accreditation period, the IQAC will channelise the efforts and measures of an institution towards academic excellence. The guidelines provided in the following pages will facilitate the institution in the creation and operation of the Internal Quality Assurance Cell (IQAC). The work of the IQAC is the first step towards the internalization and institutionalization of quality enhancement. Its success depends upon the sense of belongingness and participation it can inculcate in all the constituents of the institution. It will not be yet another hierarchical structure or recordkeeping exercise in the institution; it will be a facilitative and participative voluntary system/unit/organ of the institution. The IQAC has the potential to become a vehicle for ushering in quality by working out intervention strategies to remove deficiencies and enhance quality. Quality circles in industries operate on similar lines.\n\nObjective:\n\nThe Primary aim of the IQAC is to develop a system for conscious, consistent and catalytic action to improve the academic and administrative performance of the institution.',
-  ssrDocumentHref: 'documents/About/iqac/nacc-record/kit-nacc-ssr-cycle.pdf',
   iqacLinks: [
     { title: 'Best Practices', href: 'best-practices' },
     { title: 'AQAR Records', href: 'iqar-records' },
@@ -245,11 +309,36 @@ const IQAC_DATA = {
     { title: 'KIT NAAC Quality Profile', href: 'documents/About/IQAC/nacc-record/kit-quality-profilenacc-certificate.JPG' },
     { title: 'NAAC IIQA Undertaking 2022', href: 'documents/About/iqac/nacc-record/KITCOEK Undertaking IIQA 2022.pdf' },
     { title: 'NAAC Peer team report', href: 'documents/About/IQAC/nacc-record/nacc-peer-report.pdf' },
-    { title: 'NAAC Self Study Report Cycle-1 as on 15th Nov 2014', href: 'documents/About/IQAC/nacc-record/kit-nacc-ssr-cycle.pdf' },
+    { title: 'NAAC Self Study Report Cycle-1 as on 15th Nov 2014', href: 'documents/About/iqac/nacc-record/kit-nacc-ssr-cycle.pdf' },
     { title: 'NAAC: Central Committee', href: 'documents/About/IQAC/nacc-record/naac-central-commitee.pdf' },
     { title: 'Student Satisfaction Survey for year 2020-21', href: 'documents/About/iqac/nacc-record/student-satisfaction-survey-kit.pdf' },
     { title: 'Student Satisfaction Survey 2021-22', href: 'documents/About/iqac/nacc-record/SSS_21-22.pdf' },
     { title: 'Feedback analysis and action taken report', href: 'documents/About/iqac/nacc-record/Feedback analysis and action taken report.pdf' },
+  ],
+  iqacCommitteeMembers: [
+    { serialNo: 1, personName: 'Dr. Mohan B. Vanarotti', designation: 'Director and Professor, KIT\'s College of Engineering (Autonomous), Kolhapur', position: 'Chairman' },
+    { serialNo: 2, personName: 'Mr. Dipak L. Chougule', designation: 'Secretary, Kolhapur Institute of Technology, Kolhapur', position: 'Member, KIT Management' },
+    { serialNo: 3, personName: 'Dr. Dattatray J. Sathe', designation: 'Registrar and Professor, KIT\'s College of Engineering (Autonomous), Kolhapur', position: 'Member, Administration' },
+    { serialNo: 4, personName: 'Dr. Prashant P. Powar', designation: 'Dean - Quality Assurance, KIT\'s College of Engineering (Autonomous), Kolhapur', position: 'Member, Dean - Quality Assurance' },
+    { serialNo: 5, personName: 'Mr. Amol B. Sawant', designation: 'Asso. Dean – Quality Assurance, KIT\'s College of Engineering (Autonomous), Kolhapur', position: 'Member, IQAC Coordinator' },
+    { serialNo: 6, personName: 'Dr. S. N. Sapali', designation: 'Director, Department of Technology, Shivaji University, Kolhapur', position: 'Member, Academia' },
+    { serialNo: 7, personName: 'Mr. Sudhir S. Bakare', designation: 'Technical Director, Marvelous Engineers Pvt. Ltd., Kolhapur', position: 'Member, Alumni' },
+    { serialNo: 8, personName: 'Mr. Sandip Tahshildar', designation: 'Maintenance Engineer, Rohan Industries Pvt. Ltd. Kolhapur', position: 'Member, Industry' },
+    { serialNo: 9, personName: 'Ms. Tanuja N. Shipurkar', designation: 'NGO Member, Social Worker', position: 'Member, Communication Service' },
+    { serialNo: 10, personName: 'Mr. Poonam Sawant', designation: 'Junior Accountant, KIT\'s College of Engineering (Autonomous), Kolhapur', position: 'Member, Administration' },
+    { serialNo: 11, personName: 'Mr. Rutuparna P. Karkare', designation: 'Asso. Dean Academics, KIT\'s College of Engineering (Autonomous), Kolhapur', position: 'Member' },
+    { serialNo: 12, personName: 'Dr. Manoj M. Yadav', designation: 'Deputy Registrar - On Exam, KIT\'s College of Engineering (Autonomous), Kolhapur', position: 'Member' },
+    { serialNo: 13, personName: 'Mr. Guruprasad Chavan', designation: 'Assistant Professor, Department of Civil Engineering', position: 'Member' },
+    { serialNo: 14, personName: 'Mr. Sheetal S. Varur', designation: 'Assistant Professor, Department of Civil Engineering', position: 'Member' },
+    { serialNo: 15, personName: 'Mr. Arun Desai', designation: 'Assistant Professor, Department of Computer Science and Engineering', position: 'Member' },
+    { serialNo: 16, personName: 'Dr. Sameer S. Nagtilak', designation: 'Assistant Professor, Department of Electronics and Telecommunication Engineering', position: 'Member' },
+    { serialNo: 17, personName: 'Dr. Akshay Thorvat', designation: 'Dean Academics, KIT\'s College of Engineering (Autonomous), Kolhapur', position: 'Member' },
+    { serialNo: 18, personName: 'Dr. Jitendra Bhat', designation: 'Dean – Student Activity, KIT\'s College of Engineering (Autonomous), Kolhapur', position: 'Member' },
+    { serialNo: 19, personName: 'Dr. Amit R. Sarkar', designation: 'Dean – Corporate Relations, Dept. of Electronics and Telecomm. Engg., KIT\'s College of Engineering (Autonomous), Kolhapur', position: 'Member' },
+    { serialNo: 20, personName: 'Dr. Sachin S. Shinde', designation: 'Dean – International Relations, Incubation Innovation & Linkages, KIT\'s College of Engineering (Autonomous), Kolhapur', position: 'Member' },
+    { serialNo: 21, personName: 'Dr. Sunil S. Karidkar', designation: 'Dean – Alumni, KIT\'s College of Engineering (Autonomous), Kolhapur', position: 'Member' },
+    { serialNo: 22, personName: 'Dr. Yuvraj M. Patil', designation: 'Dean – PG Studies & Head, Electronics and Telecommunication, KIT\'s College of Engineering (Autonomous), Kolhapur', position: 'Member' },
+    { serialNo: 23, personName: 'Mr. Sudharshan Anuse', designation: 'Third Year B.Tech Civil Engineering, KIT\'s College of Engineering (Autonomous), Kolhapur', position: 'Member' },
   ],
 };
 
@@ -257,7 +346,7 @@ async function seed(strapi) {
   seedLog(strapi, 'Seeding About (all sections)...');
 
   const about = await strapi.db.query(UID).findOne({
-    populate: ['founderstrustees', 'chairmanMessage', 'directorMessage', 'boardOfDirectors', 'governingCouncil', 'collegeAdministration', 'officeAdministration', 'milestones', 'iqac'],
+    populate: ['founderstrustees', 'chairmanMessage', 'directorMessage', 'boardOfDirectors', 'governingCouncil', 'collegeAdministration', 'officeAdministration', 'milestones', 'iqac', 'iqac.iqacCommitteeMembers', 'nirfDocuments'],
   });
 
   if (!about) {
@@ -273,6 +362,7 @@ async function seed(strapi) {
         officeAdministration: OFFICE_ADMINISTRATION,
         milestones: MILESTONES,
         iqac: IQAC_DATA,
+        nirfDocuments: NIRF_DOCUMENTS_DATA,
       },
     });
     seedLog(strapi, '  Created About with all data.');
@@ -341,7 +431,31 @@ async function seed(strapi) {
     updateData.iqac = IQAC_DATA;
     seedLog(strapi, '  Adding IQAC...');
   } else {
-    seedLog(strapi, '  Skipped: IQAC already exists.');
+    const iqacUpdate = {};
+    if (!about.iqac.iqacLinks || about.iqac.iqacLinks.length === 0) {
+      iqacUpdate.iqacLinks = IQAC_DATA.iqacLinks;
+      seedLog(strapi, '  Adding IQAC Links...');
+    }
+    if (!about.iqac.naacRecords || about.iqac.naacRecords.length === 0) {
+      iqacUpdate.naacRecords = IQAC_DATA.naacRecords;
+      seedLog(strapi, '  Adding IQAC NAAC Records...');
+    }
+    if (!about.iqac.iqacCommitteeMembers || about.iqac.iqacCommitteeMembers.length === 0) {
+      iqacUpdate.iqacCommitteeMembers = IQAC_DATA.iqacCommitteeMembers;
+      seedLog(strapi, '  Adding IQAC Committee Members...');
+    }
+    if (Object.keys(iqacUpdate).length > 0) {
+      updateData.iqac = iqacUpdate;
+    } else {
+      seedLog(strapi, '  Skipped: IQAC already fully populated.');
+    }
+  }
+
+  if (!about.nirfDocuments || !about.nirfDocuments.categories || about.nirfDocuments.categories.length === 0) {
+    updateData.nirfDocuments = NIRF_DOCUMENTS_DATA;
+    seedLog(strapi, '  Adding NIRF Documents...');
+  } else {
+    seedLog(strapi, `  Skipped: NIRF Documents already exist (${about.nirfDocuments.categories.length} categories).`);
   }
 
   if (Object.keys(updateData).length === 0) {
@@ -357,4 +471,4 @@ async function seed(strapi) {
   seedLog(strapi, '  About updated successfully.');
 }
 
-module.exports = { seed, FOUNDERS_TRUSTEES, CHAIRMAN_MESSAGE, DIRECTOR_MESSAGE, BOARD_OF_DIRECTORS, GOVERNING_COUNCIL, COLLEGE_ADMINISTRATION, OFFICE_ADMINISTRATION, MILESTONES, IQAC_DATA };
+module.exports = { seed, FOUNDERS_TRUSTEES, CHAIRMAN_MESSAGE, DIRECTOR_MESSAGE, BOARD_OF_DIRECTORS, GOVERNING_COUNCIL, COLLEGE_ADMINISTRATION, OFFICE_ADMINISTRATION, MILESTONES, IQAC_DATA, NIRF_DOCUMENTS_DATA };

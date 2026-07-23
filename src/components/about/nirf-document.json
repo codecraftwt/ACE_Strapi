@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_about_nirf_documents",
+  "info": {
+    "displayName": "NIRF Document",
+    "icon": "file"
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "href": {
+      "type": "text",
+      "required": true
+    }
+  }
+}

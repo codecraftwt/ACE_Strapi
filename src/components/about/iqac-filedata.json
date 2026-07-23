@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_about_iqac_filedata",
+  "info": {
+    "displayName": "IQAC_Filedata"
+  },
+  "options": {},
+  "attributes": {
+    "File_Name": {
+      "type": "text"
+    },
+    "Link": {
+      "type": "text"
+    },
+    "Title": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}
