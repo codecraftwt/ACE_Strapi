@@ -596,12 +596,19 @@ export interface ApiAdmissionAdmission extends Struct.SingleTypeSchema {
       'api::admission.admission'
     > &
       Schema.Attribute.Private;
+    phdProgram: Schema.Attribute.Component<'admission.phd-program', false>;
+    postGraduate: Schema.Attribute.Component<'admission.post-graduate', false>;
     publishedAt: Schema.Attribute.DateTime;
+    scholarship: Schema.Attribute.Component<'admission.scholarship', false>;
     title: Schema.Attribute.Text;
     undergraduate: Schema.Attribute.Component<'admission.undergraduate', false>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    vocationalCourses: Schema.Attribute.Component<
+      'admission.vocational-courses',
+      false
+    >;
   };
 }
 
@@ -908,6 +915,14 @@ export interface ApiDepartmentDepartment extends Struct.CollectionTypeSchema {
   };
   attributes: {
     achievements: Schema.Attribute.Blocks;
+    Baners: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
+    careerPerspective: Schema.Attribute.Component<
+      'department.career-perspective',
+      true
+    >;
     courses: Schema.Attribute.Relation<'oneToMany', 'api::course.course'>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -933,6 +948,7 @@ export interface ApiDepartmentDepartment extends Struct.CollectionTypeSchema {
       true
     >;
     publishedAt: Schema.Attribute.DateTime;
+    quickLinks: Schema.Attribute.Component<'department.quick-links', true>;
     results: Schema.Attribute.Relation<'oneToMany', 'api::result.result'>;
     send_emails: Schema.Attribute.Relation<
       'oneToMany',
@@ -941,6 +957,7 @@ export interface ApiDepartmentDepartment extends Struct.CollectionTypeSchema {
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    URL: Schema.Attribute.Text;
   };
 }
 

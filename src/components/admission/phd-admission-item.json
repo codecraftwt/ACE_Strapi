@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_admission_phd_admission_items",
+  "info": {
+    "displayName": "PhD Admission Item",
+    "icon": "file"
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "formLink": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

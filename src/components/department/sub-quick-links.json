@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_department_sub_quick_links",
+  "info": {
+    "displayName": "subQuickLinks"
+  },
+  "options": {},
+  "attributes": {
+    "Name": {
+      "type": "string"
+    },
+    "Link": {
+      "type": "text"
+    }
+  },
+  "config": {}
+}

@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_admission_phd_research_centers",
+  "info": {
+    "displayName": "PhD Research Center",
+    "icon": "building"
+  },
+  "attributes": {
+    "centerName": {
+      "type": "string",
+      "required": true
+    },
+    "guides": {
+      "type": "component",
+      "repeatable": true,
+      "component": "admission.phd-guide"
+    },
+    "documentLink": {
+      "type": "string"
+    }
+  }
+}

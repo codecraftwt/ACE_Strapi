@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_admission_phd_programs",
+  "info": {
+    "displayName": "PhD Program",
+    "icon": "book"
+  },
+  "attributes": {
+    "phdAdmission": {
+      "type": "component",
+      "component": "admission.phd-admission",
+      "repeatable": false
+    },
+    "rulesAndRegulation": {
+      "type": "component",
+      "component": "admission.phd-rules-and-regulation",
+      "repeatable": false
+    },
+    "researchCenters": {
+      "type": "component",
+      "repeatable": true,
+      "component": "admission.phd-research-center"
+    }
+  }
+}

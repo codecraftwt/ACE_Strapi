@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_admission_scholarships",
+  "info": {
+    "displayName": "Scholarship",
+    "icon": "award"
+  },
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "banner": {
+      "type": "media",
+      "allowedTypes": ["images"],
+      "multiple": true
+    },
+    "entries": {
+      "type": "component",
+      "repeatable": true,
+      "component": "admission.scholarship-entry"
+    }
+  }
+}

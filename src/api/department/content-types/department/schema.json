@@ -75,6 +75,29 @@
       "relation": "oneToMany",
       "target": "api::result.result",
       "mappedBy": "department"
+    },
+    "URL": {
+      "type": "text"
+    },
+    "careerPerspective": {
+      "type": "component",
+      "component": "department.career-perspective",
+      "repeatable": true
+    },
+    "quickLinks": {
+      "type": "component",
+      "component": "department.quick-links",
+      "repeatable": true
+    },
+    "Baners": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
     }
   }
 }

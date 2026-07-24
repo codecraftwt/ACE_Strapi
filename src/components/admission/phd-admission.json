@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_admission_phd_admissions",
+  "info": {
+    "displayName": "PhD Admission",
+    "icon": "file"
+  },
+  "attributes": {
+    "items": {
+      "type": "component",
+      "repeatable": true,
+      "component": "admission.phd-admission-item"
+    }
+  }
+}

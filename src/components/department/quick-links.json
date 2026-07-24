@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_department_quick_links",
+  "info": {
+    "displayName": "quickLinks"
+  },
+  "options": {},
+  "attributes": {
+    "Name": {
+      "type": "string"
+    },
+    "Link": {
+      "type": "string"
+    },
+    "subQuickLinks": {
+      "type": "component",
+      "component": "department.sub-quick-links",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

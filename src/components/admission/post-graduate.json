@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_admission_post_graduates",
+  "info": {
+    "displayName": "Post Graduate",
+    "icon": "book"
+  },
+  "attributes": {
+    "academicYears": {
+      "type": "component",
+      "repeatable": true,
+      "component": "admission.academic-year"
+    },
+    "instituteCode": {
+      "type": "component",
+      "component": "admission.post-graduate-institute-code",
+      "repeatable": false
+    }
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_admission_vocational_enrollment_procedures",
+  "info": {
+    "displayName": "Vocational Enrollment Procedure",
+    "icon": "clipboard"
+  },
+  "attributes": {
+    "steps": {
+      "type": "component",
+      "repeatable": true,
+      "component": "admission.vocational-enrollment-step"
+    }
+  }
+}

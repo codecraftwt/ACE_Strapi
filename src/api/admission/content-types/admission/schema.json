@@ -28,6 +28,26 @@
       "type": "component",
       "component": "admission.contact-info",
       "repeatable": false
+    },
+    "postGraduate": {
+      "type": "component",
+      "component": "admission.post-graduate",
+      "repeatable": false
+    },
+    "phdProgram": {
+      "type": "component",
+      "component": "admission.phd-program",
+      "repeatable": false
+    },
+    "vocationalCourses": {
+      "type": "component",
+      "component": "admission.vocational-courses",
+      "repeatable": false
+    },
+    "scholarship": {
+      "type": "component",
+      "component": "admission.scholarship",
+      "repeatable": false
     }
   }
 }

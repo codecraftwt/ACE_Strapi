@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_admission_vocational_why_choose_bims",
+  "info": {
+    "displayName": "Vocational Why Choose BIM",
+    "icon": "star"
+  },
+  "attributes": {
+    "skillGaps": {
+      "type": "component",
+      "repeatable": true,
+      "component": "admission.vocational-skill-gap"
+    },
+    "marketReport": {
+      "type": "text"
+    },
+    "ariiaFramework": {
+      "type": "text"
+    },
+    "placementMechanism": {
+      "type": "text"
+    }
+  }
+}

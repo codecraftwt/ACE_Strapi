@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_admission_scholarship_entries",
+  "info": {
+    "displayName": "Scholarship Entry",
+    "icon": "list"
+  },
+  "attributes": {
+    "srNo": {
+      "type": "integer"
+    },
+    "type": {
+      "type": "string"
+    },
+    "category": {
+      "type": "string"
+    },
+    "incomeLimit": {
+      "type": "string"
+    },
+    "amountSanction": {
+      "type": "text"
+    }
+  }
+}

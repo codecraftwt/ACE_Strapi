@@ -28,7 +28,11 @@ const { seedLog } = require('./seed-utils');
 // const permissions = require('./seeders/permissions');
 // const about = require('./seeders/about');
 // const seedAboutAccreditation = require('./seeders/seed-about-accreditation');
-const seedAdmission = require('./seeders/seed-admission');
+// const seedAdmission = require('./seeders/seed-admission');
+// const seedPostGraduate = require('./seeders/seed-post-graduate');
+// const seedPhdProgram = require('./seeders/seed-phd-program');
+// const seedVocationalCourses = require('./seeders/seed-vocational-courses');
+const seedScholarship = require('./seeders/seed-scholarship');
 
 /**
  * Run all seeders in dependency order.
@@ -77,7 +81,11 @@ async function runSeeders(strapi) {
   // await permissions.seed(strapi);
   // await about.seed(strapi);
   // await seedAboutAccreditation.seed(strapi);
-  await seedAdmission.seed(strapi);
+  // await seedAdmission.seed(strapi);
+  // await seedPostGraduate.seed(strapi);
+  // await seedPhdProgram.seed(strapi);
+  // await seedVocationalCourses.seed(strapi);
+  await seedScholarship.seed(strapi);
 
   const elapsed = ((Date.now() - start) / 1000).toFixed(2);
   seedLog(strapi, `========== SEEDING COMPLETE (${elapsed}s) ==========`);

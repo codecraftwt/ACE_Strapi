@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_admission_vocational_coursess",
+  "info": {
+    "displayName": "Vocational Courses",
+    "icon": "book"
+  },
+  "attributes": {
+    "bimTechnology": {
+      "type": "component",
+      "component": "admission.vocational-bim-technology",
+      "repeatable": false
+    },
+    "poster": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    }
+  }
+}

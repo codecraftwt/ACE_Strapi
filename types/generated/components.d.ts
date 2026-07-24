@@ -356,6 +356,165 @@ export interface AdmissionInstituteCode extends Struct.ComponentSchema {
   };
 }
 
+export interface AdmissionPhdAdmission extends Struct.ComponentSchema {
+  collectionName: 'components_admission_phd_admissions';
+  info: {
+    displayName: 'PhD Admission';
+    icon: 'file';
+  };
+  attributes: {
+    items: Schema.Attribute.Component<'admission.phd-admission-item', true>;
+  };
+}
+
+export interface AdmissionPhdAdmissionItem extends Struct.ComponentSchema {
+  collectionName: 'components_admission_phd_admission_items';
+  info: {
+    displayName: 'PhD Admission Item';
+    icon: 'file';
+  };
+  attributes: {
+    formLink: Schema.Attribute.String & Schema.Attribute.Required;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface AdmissionPhdGuide extends Struct.ComponentSchema {
+  collectionName: 'components_admission_phd_guides';
+  info: {
+    displayName: 'PhD Guide';
+    icon: 'user';
+  };
+  attributes: {
+    name: Schema.Attribute.String & Schema.Attribute.Required;
+    srNo: Schema.Attribute.Integer;
+  };
+}
+
+export interface AdmissionPhdProgram extends Struct.ComponentSchema {
+  collectionName: 'components_admission_phd_programs';
+  info: {
+    displayName: 'PhD Program';
+    icon: 'book';
+  };
+  attributes: {
+    phdAdmission: Schema.Attribute.Component<'admission.phd-admission', false>;
+    researchCenters: Schema.Attribute.Component<
+      'admission.phd-research-center',
+      true
+    >;
+    rulesAndRegulation: Schema.Attribute.Component<
+      'admission.phd-rules-and-regulation',
+      false
+    >;
+  };
+}
+
+export interface AdmissionPhdResearchCenter extends Struct.ComponentSchema {
+  collectionName: 'components_admission_phd_research_centers';
+  info: {
+    displayName: 'PhD Research Center';
+    icon: 'building';
+  };
+  attributes: {
+    centerName: Schema.Attribute.String & Schema.Attribute.Required;
+    documentLink: Schema.Attribute.String;
+    guides: Schema.Attribute.Component<'admission.phd-guide', true>;
+  };
+}
+
+export interface AdmissionPhdRulesAndRegulation extends Struct.ComponentSchema {
+  collectionName: 'components_admission_phd_rules_and_regulations';
+  info: {
+    displayName: 'PhD Rules And Regulation';
+    icon: 'file';
+  };
+  attributes: {
+    items: Schema.Attribute.Component<'admission.phd-rules-item', true>;
+  };
+}
+
+export interface AdmissionPhdRulesItem extends Struct.ComponentSchema {
+  collectionName: 'components_admission_phd_rules_items';
+  info: {
+    displayName: 'PhD Rules Item';
+    icon: 'file';
+  };
+  attributes: {
+    fileLink: Schema.Attribute.String & Schema.Attribute.Required;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface AdmissionPostGraduate extends Struct.ComponentSchema {
+  collectionName: 'components_admission_post_graduates';
+  info: {
+    displayName: 'Post Graduate';
+    icon: 'book';
+  };
+  attributes: {
+    academicYears: Schema.Attribute.Component<'admission.academic-year', true>;
+    instituteCode: Schema.Attribute.Component<
+      'admission.post-graduate-institute-code',
+      false
+    >;
+  };
+}
+
+export interface AdmissionPostGraduateCourse extends Struct.ComponentSchema {
+  collectionName: 'components_admission_post_graduate_courses';
+  info: {
+    displayName: 'Post Graduate Course';
+    icon: 'book';
+  };
+  attributes: {
+    code: Schema.Attribute.String;
+    courseName: Schema.Attribute.String & Schema.Attribute.Required;
+    intake: Schema.Attribute.Integer;
+  };
+}
+
+export interface AdmissionPostGraduateInstituteCode
+  extends Struct.ComponentSchema {
+  collectionName: 'components_admission_post_graduate_institute_codes';
+  info: {
+    displayName: 'Post Graduate Institute Code';
+    icon: 'code';
+  };
+  attributes: {
+    code: Schema.Attribute.String & Schema.Attribute.Required;
+    courses: Schema.Attribute.Component<'admission.post-graduate-course', true>;
+  };
+}
+
+export interface AdmissionScholarship extends Struct.ComponentSchema {
+  collectionName: 'components_admission_scholarships';
+  info: {
+    displayName: 'Scholarship';
+    icon: 'award';
+  };
+  attributes: {
+    banner: Schema.Attribute.Media<'images', true>;
+    entries: Schema.Attribute.Component<'admission.scholarship-entry', true>;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface AdmissionScholarshipEntry extends Struct.ComponentSchema {
+  collectionName: 'components_admission_scholarship_entries';
+  info: {
+    displayName: 'Scholarship Entry';
+    icon: 'list';
+  };
+  attributes: {
+    amountSanction: Schema.Attribute.Text;
+    category: Schema.Attribute.String;
+    incomeLimit: Schema.Attribute.String;
+    srNo: Schema.Attribute.Integer;
+    type: Schema.Attribute.String;
+  };
+}
+
 export interface AdmissionUndergraduate extends Struct.ComponentSchema {
   collectionName: 'components_admission_undergraduates';
   info: {
@@ -364,6 +523,164 @@ export interface AdmissionUndergraduate extends Struct.ComponentSchema {
   };
   attributes: {
     academicYears: Schema.Attribute.Component<'admission.academic-year', true>;
+  };
+}
+
+export interface AdmissionVocationalBimTechnology
+  extends Struct.ComponentSchema {
+  collectionName: 'components_admission_vocational_bim_technologies';
+  info: {
+    displayName: 'Vocational BIM Technology';
+    icon: 'building';
+  };
+  attributes: {
+    about: Schema.Attribute.Text;
+    badge: Schema.Attribute.String;
+    capacity: Schema.Attribute.String;
+    courses: Schema.Attribute.Component<
+      'admission.vocational-course-item',
+      true
+    >;
+    courseSchedule: Schema.Attribute.String;
+    description: Schema.Attribute.Text;
+    duration: Schema.Attribute.String;
+    eligibility: Schema.Attribute.Text;
+    enrollmentProcedure: Schema.Attribute.Component<
+      'admission.vocational-enrollment-procedure',
+      false
+    >;
+    seats: Schema.Attribute.String;
+    subtitle: Schema.Attribute.String;
+    tagline: Schema.Attribute.String;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+    whyChooseBim: Schema.Attribute.Component<
+      'admission.vocational-why-choose-bim',
+      false
+    >;
+  };
+}
+
+export interface AdmissionVocationalCourseItem extends Struct.ComponentSchema {
+  collectionName: 'components_admission_vocational_course_items';
+  info: {
+    displayName: 'Vocational Course Item';
+    icon: 'book';
+  };
+  attributes: {
+    courseName: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface AdmissionVocationalCourses extends Struct.ComponentSchema {
+  collectionName: 'components_admission_vocational_coursess';
+  info: {
+    displayName: 'Vocational Courses';
+    icon: 'book';
+  };
+  attributes: {
+    bimTechnology: Schema.Attribute.Component<
+      'admission.vocational-bim-technology',
+      false
+    >;
+    poster: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
+  };
+}
+
+export interface AdmissionVocationalEnrollmentProcedure
+  extends Struct.ComponentSchema {
+  collectionName: 'components_admission_vocational_enrollment_procedures';
+  info: {
+    displayName: 'Vocational Enrollment Procedure';
+    icon: 'clipboard';
+  };
+  attributes: {
+    steps: Schema.Attribute.Component<
+      'admission.vocational-enrollment-step',
+      true
+    >;
+  };
+}
+
+export interface AdmissionVocationalEnrollmentStep
+  extends Struct.ComponentSchema {
+  collectionName: 'components_admission_vocational_enrollment_steps';
+  info: {
+    displayName: 'Vocational Enrollment Step';
+    icon: 'list';
+  };
+  attributes: {
+    instruction: Schema.Attribute.Text & Schema.Attribute.Required;
+    stepNumber: Schema.Attribute.Integer;
+  };
+}
+
+export interface AdmissionVocationalSkillGap extends Struct.ComponentSchema {
+  collectionName: 'components_admission_vocational_skill_gaps';
+  info: {
+    displayName: 'Vocational Skill Gap';
+    icon: 'chartBar';
+  };
+  attributes: {
+    description: Schema.Attribute.Text & Schema.Attribute.Required;
+    trade: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface AdmissionVocationalWhyChooseBim
+  extends Struct.ComponentSchema {
+  collectionName: 'components_admission_vocational_why_choose_bims';
+  info: {
+    displayName: 'Vocational Why Choose BIM';
+    icon: 'star';
+  };
+  attributes: {
+    ariiaFramework: Schema.Attribute.Text;
+    marketReport: Schema.Attribute.Text;
+    placementMechanism: Schema.Attribute.Text;
+    skillGaps: Schema.Attribute.Component<
+      'admission.vocational-skill-gap',
+      true
+    >;
+  };
+}
+
+export interface DepartmentCareerPerspective extends Struct.ComponentSchema {
+  collectionName: 'components_department_career_perspectives';
+  info: {
+    displayName: 'CareerPerspective';
+  };
+  attributes: {
+    desciption: Schema.Attribute.Text;
+    title: Schema.Attribute.Text;
+  };
+}
+
+export interface DepartmentQuickLinks extends Struct.ComponentSchema {
+  collectionName: 'components_department_quick_links';
+  info: {
+    displayName: 'quickLinks';
+  };
+  attributes: {
+    Link: Schema.Attribute.String;
+    Name: Schema.Attribute.String;
+    subQuickLinks: Schema.Attribute.Component<
+      'department.sub-quick-links',
+      true
+    >;
+  };
+}
+
+export interface DepartmentSubQuickLinks extends Struct.ComponentSchema {
+  collectionName: 'components_department_sub_quick_links';
+  info: {
+    displayName: 'subQuickLinks';
+  };
+  attributes: {
+    Link: Schema.Attribute.Text;
+    Name: Schema.Attribute.String;
   };
 }
 
@@ -601,7 +918,29 @@ declare module '@strapi/strapi' {
       'admission.document-item': AdmissionDocumentItem;
       'admission.faculty-contact': AdmissionFacultyContact;
       'admission.institute-code': AdmissionInstituteCode;
+      'admission.phd-admission': AdmissionPhdAdmission;
+      'admission.phd-admission-item': AdmissionPhdAdmissionItem;
+      'admission.phd-guide': AdmissionPhdGuide;
+      'admission.phd-program': AdmissionPhdProgram;
+      'admission.phd-research-center': AdmissionPhdResearchCenter;
+      'admission.phd-rules-and-regulation': AdmissionPhdRulesAndRegulation;
+      'admission.phd-rules-item': AdmissionPhdRulesItem;
+      'admission.post-graduate': AdmissionPostGraduate;
+      'admission.post-graduate-course': AdmissionPostGraduateCourse;
+      'admission.post-graduate-institute-code': AdmissionPostGraduateInstituteCode;
+      'admission.scholarship': AdmissionScholarship;
+      'admission.scholarship-entry': AdmissionScholarshipEntry;
       'admission.undergraduate': AdmissionUndergraduate;
+      'admission.vocational-bim-technology': AdmissionVocationalBimTechnology;
+      'admission.vocational-course-item': AdmissionVocationalCourseItem;
+      'admission.vocational-courses': AdmissionVocationalCourses;
+      'admission.vocational-enrollment-procedure': AdmissionVocationalEnrollmentProcedure;
+      'admission.vocational-enrollment-step': AdmissionVocationalEnrollmentStep;
+      'admission.vocational-skill-gap': AdmissionVocationalSkillGap;
+      'admission.vocational-why-choose-bim': AdmissionVocationalWhyChooseBim;
+      'department.career-perspective': DepartmentCareerPerspective;
+      'department.quick-links': DepartmentQuickLinks;
+      'department.sub-quick-links': DepartmentSubQuickLinks;
       'shared.about-kit-co-ek': SharedAboutKitCoEk;
       'shared.academic-subject': SharedAcademicSubject;
       'shared.branchwiseplacement': SharedBranchwiseplacement;

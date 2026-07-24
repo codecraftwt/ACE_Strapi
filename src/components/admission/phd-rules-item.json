@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_admission_phd_rules_items",
+  "info": {
+    "displayName": "PhD Rules Item",
+    "icon": "file"
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "fileLink": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

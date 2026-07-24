@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_admission_vocational_course_items",
+  "info": {
+    "displayName": "Vocational Course Item",
+    "icon": "book"
+  },
+  "attributes": {
+    "courseName": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

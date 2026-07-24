@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_admission_phd_guides",
+  "info": {
+    "displayName": "PhD Guide",
+    "icon": "user"
+  },
+  "attributes": {
+    "srNo": {
+      "type": "integer"
+    },
+    "name": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

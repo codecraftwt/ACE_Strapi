@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_admission_vocational_skill_gaps",
+  "info": {
+    "displayName": "Vocational Skill Gap",
+    "icon": "chartBar"
+  },
+  "attributes": {
+    "trade": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    }
+  }
+}

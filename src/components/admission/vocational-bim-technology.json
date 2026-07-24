@@ -1,0 +1,58 @@
+{
+  "collectionName": "components_admission_vocational_bim_technologies",
+  "info": {
+    "displayName": "Vocational BIM Technology",
+    "icon": "building"
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "subtitle": {
+      "type": "string"
+    },
+    "badge": {
+      "type": "string"
+    },
+    "tagline": {
+      "type": "string"
+    },
+    "duration": {
+      "type": "string"
+    },
+    "capacity": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "about": {
+      "type": "text"
+    },
+    "enrollmentProcedure": {
+      "type": "component",
+      "component": "admission.vocational-enrollment-procedure",
+      "repeatable": false
+    },
+    "courses": {
+      "type": "component",
+      "repeatable": true,
+      "component": "admission.vocational-course-item"
+    },
+    "eligibility": {
+      "type": "text"
+    },
+    "seats": {
+      "type": "string"
+    },
+    "courseSchedule": {
+      "type": "string"
+    },
+    "whyChooseBim": {
+      "type": "component",
+      "component": "admission.vocational-why-choose-bim",
+      "repeatable": false
+    }
+  }
+}

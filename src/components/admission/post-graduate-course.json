@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_admission_post_graduate_courses",
+  "info": {
+    "displayName": "Post Graduate Course",
+    "icon": "book"
+  },
+  "attributes": {
+    "courseName": {
+      "type": "string",
+      "required": true
+    },
+    "intake": {
+      "type": "integer"
+    },
+    "code": {
+      "type": "string"
+    }
+  }
+}

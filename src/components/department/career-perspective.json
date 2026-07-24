@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_department_career_perspectives",
+  "info": {
+    "displayName": "CareerPerspective"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "text"
+    },
+    "desciption": {
+      "type": "text"
+    }
+  },
+  "config": {}
+}

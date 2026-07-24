@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_admission_vocational_enrollment_steps",
+  "info": {
+    "displayName": "Vocational Enrollment Step",
+    "icon": "list"
+  },
+  "attributes": {
+    "stepNumber": {
+      "type": "integer"
+    },
+    "instruction": {
+      "type": "text",
+      "required": true
+    }
+  }
+}
