@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_exam_cell_timetable",
+  "info": {
+    "displayName": "Timetable",
+    "description": "Exam timetable entry"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text"
+    },
+    "date": {
+      "type": "date"
+    },
+    "documentUrl": {
+      "type": "text"
+    }
+  }
+}

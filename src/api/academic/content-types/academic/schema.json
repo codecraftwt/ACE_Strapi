@@ -1,0 +1,50 @@
+{
+  "kind": "singleType",
+  "collectionName": "academics",
+  "info": {
+    "singularName": "academic",
+    "pluralName": "academics",
+    "displayName": "Academic"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "RulesRegulations": {
+      "type": "component",
+      "component": "academics.rules-and-regulations",
+      "repeatable": true
+    },
+    "policyDocuments": {
+      "type": "component",
+      "component": "academics.policy-documents",
+      "repeatable": true
+    },
+    "onlineSyllabus": {
+      "type": "component",
+      "component": "academics.online-syllabus",
+      "repeatable": true
+    },
+    "ResearchDevelopment": {
+      "type": "component",
+      "component": "research-development.research-development",
+      "repeatable": false
+    },
+    "IntershipPolicy": {
+      "type": "component",
+      "component": "academics.internship-policy",
+      "repeatable": false
+    },
+    "academicCalender": {
+      "type": "component",
+      "component": "academic-calender.academic-calender",
+      "repeatable": false
+    },
+    "studentClub": {
+      "type": "component",
+      "component": "academics.student-club",
+      "repeatable": false
+    }
+  }
+}

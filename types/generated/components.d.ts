@@ -264,6 +264,126 @@ export interface AboutOfficeAdminMember extends Struct.ComponentSchema {
   };
 }
 
+export interface AcademicCalenderAcademicCalender
+  extends Struct.ComponentSchema {
+  collectionName: 'components_academic_calender_academic_calenders';
+  info: {
+    displayName: 'Academic Calender';
+  };
+  attributes: {
+    yeargroup: Schema.Attribute.Component<'academic-calender.year-group', true>;
+  };
+}
+
+export interface AcademicCalenderEvents extends Struct.ComponentSchema {
+  collectionName: 'components_academic_calender_events';
+  info: {
+    displayName: 'Events';
+  };
+  attributes: {
+    Link: Schema.Attribute.Text;
+    Tilte: Schema.Attribute.String;
+  };
+}
+
+export interface AcademicCalenderYearGroup extends Struct.ComponentSchema {
+  collectionName: 'components_academic_calender_year_groups';
+  info: {
+    displayName: 'Year Group';
+  };
+  attributes: {
+    Events: Schema.Attribute.Component<'academic-calender.events', true>;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface AcademicsClubItem extends Struct.ComponentSchema {
+  collectionName: 'components_academics_club_items';
+  info: {
+    displayName: 'club-item';
+    icon: 'hashtag';
+  };
+  attributes: {
+    clubName: Schema.Attribute.String & Schema.Attribute.Required;
+    documentPath: Schema.Attribute.Text;
+    serialNo: Schema.Attribute.Integer;
+  };
+}
+
+export interface AcademicsClubYear extends Struct.ComponentSchema {
+  collectionName: 'components_academics_club_years';
+  info: {
+    displayName: 'club-year';
+    icon: 'calendar';
+  };
+  attributes: {
+    academicYear: Schema.Attribute.String & Schema.Attribute.Required;
+    clubs: Schema.Attribute.Component<'academics.club-item', true>;
+  };
+}
+
+export interface AcademicsInternshipPolicy extends Struct.ComponentSchema {
+  collectionName: 'components_academics_internship_policies';
+  info: {
+    displayName: 'Internship Policy';
+  };
+  attributes: {
+    intershipData: Schema.Attribute.Component<
+      'intership-policy.intership-files',
+      true
+    >;
+  };
+}
+
+export interface AcademicsOnlineSyllabus extends Struct.ComponentSchema {
+  collectionName: 'components_academics_online_syllabi';
+  info: {
+    displayName: 'Online Syllabus';
+  };
+  attributes: {
+    AcademicLevel: Schema.Attribute.Enumeration<['B.Tech', 'M.Tech']>;
+    AcademicYear: Schema.Attribute.Enumeration<
+      ['First Year', 'Second Year', 'Third Year', 'Final Year']
+    >;
+    branchs: Schema.Attribute.Component<'online-syllabus.branch', true>;
+    Sceme: Schema.Attribute.String;
+  };
+}
+
+export interface AcademicsPolicyDocuments extends Struct.ComponentSchema {
+  collectionName: 'components_academics_policy_documents';
+  info: {
+    displayName: 'Policy Documents';
+  };
+  attributes: {
+    Link: Schema.Attribute.Text;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface AcademicsRulesAndRegulations extends Struct.ComponentSchema {
+  collectionName: 'components_academics_rules_and_regulations';
+  info: {
+    displayName: 'Rules and Regulations';
+  };
+  attributes: {
+    Link: Schema.Attribute.Text;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface AcademicsStudentClub extends Struct.ComponentSchema {
+  collectionName: 'components_academics_student_clubs';
+  info: {
+    displayName: 'student-club';
+    icon: 'users';
+  };
+  attributes: {
+    aboutDescription: Schema.Attribute.Text;
+    yearGroups: Schema.Attribute.Component<'academics.club-year', true>;
+  };
+}
+
 export interface AdmissionAcademicYear extends Struct.ComponentSchema {
   collectionName: 'components_admission_academic_years';
   info: {
@@ -684,6 +804,114 @@ export interface DepartmentSubQuickLinks extends Struct.ComponentSchema {
   };
 }
 
+export interface ExamCellStaff extends Struct.ComponentSchema {
+  collectionName: 'components_exam_cell_staff';
+  info: {
+    displayName: 'Staff';
+  };
+  attributes: {
+    designation: Schema.Attribute.String;
+    Name: Schema.Attribute.String;
+    Photo: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+  };
+}
+
+export interface ExamCellTimetable extends Struct.ComponentSchema {
+  collectionName: 'components_exam_cell_timetable';
+  info: {
+    description: 'Exam timetable entry';
+    displayName: 'Timetable';
+  };
+  attributes: {
+    date: Schema.Attribute.Date;
+    description: Schema.Attribute.Text;
+    documentUrl: Schema.Attribute.Text;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface IntershipPolicyIntershipFiles extends Struct.ComponentSchema {
+  collectionName: 'components_intership_policy_intership_files';
+  info: {
+    displayName: 'intershipFiles';
+  };
+  attributes: {
+    Link: Schema.Attribute.Text;
+    Title: Schema.Attribute.String;
+  };
+}
+
+export interface OnlineSyllabusBranch extends Struct.ComponentSchema {
+  collectionName: 'components_online_syllabus_branches';
+  info: {
+    displayName: 'Branch';
+  };
+  attributes: {
+    BranchName: Schema.Attribute.String;
+    structure: Schema.Attribute.Component<'online-syllabus.strcture', true>;
+    Syllabus: Schema.Attribute.Component<'online-syllabus.syllabus', true>;
+  };
+}
+
+export interface OnlineSyllabusStrcture extends Struct.ComponentSchema {
+  collectionName: 'components_online_syllabus_strctures';
+  info: {
+    displayName: 'strcture';
+  };
+  attributes: {
+    Link: Schema.Attribute.Text;
+    Title: Schema.Attribute.String;
+  };
+}
+
+export interface OnlineSyllabusSyllabus extends Struct.ComponentSchema {
+  collectionName: 'components_online_syllabus_syllabi';
+  info: {
+    displayName: 'Syllabus';
+  };
+  attributes: {
+    Link: Schema.Attribute.Text;
+    Title: Schema.Attribute.String;
+  };
+}
+
+export interface ResearchDevelopmentData extends Struct.ComponentSchema {
+  collectionName: 'components_research_development_data';
+  info: {
+    displayName: 'data';
+  };
+  attributes: {
+    Link: Schema.Attribute.Text;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface ResearchDevelopmentResearchDevelopment
+  extends Struct.ComponentSchema {
+  collectionName: 'components_research_development_research_developments';
+  info: {
+    displayName: 'ResearchDevelopment';
+  };
+  attributes: {
+    Files: Schema.Attribute.Component<
+      'research-development.researchdata',
+      true
+    >;
+  };
+}
+
+export interface ResearchDevelopmentResearchdata
+  extends Struct.ComponentSchema {
+  collectionName: 'components_research_development_researchdata';
+  info: {
+    displayName: 'Researchdata';
+  };
+  attributes: {
+    Link: Schema.Attribute.Text;
+    title: Schema.Attribute.String;
+  };
+}
+
 export interface SharedAboutKitCoEk extends Struct.ComponentSchema {
   collectionName: 'components_shared_about_kit_co_eks';
   info: {
@@ -910,6 +1138,16 @@ declare module '@strapi/strapi' {
       'about.nirf-documents': AboutNirfDocuments;
       'about.nirf-year': AboutNirfYear;
       'about.office-admin-member': AboutOfficeAdminMember;
+      'academic-calender.academic-calender': AcademicCalenderAcademicCalender;
+      'academic-calender.events': AcademicCalenderEvents;
+      'academic-calender.year-group': AcademicCalenderYearGroup;
+      'academics.club-item': AcademicsClubItem;
+      'academics.club-year': AcademicsClubYear;
+      'academics.internship-policy': AcademicsInternshipPolicy;
+      'academics.online-syllabus': AcademicsOnlineSyllabus;
+      'academics.policy-documents': AcademicsPolicyDocuments;
+      'academics.rules-and-regulations': AcademicsRulesAndRegulations;
+      'academics.student-club': AcademicsStudentClub;
       'admission.academic-year': AdmissionAcademicYear;
       'admission.admission-tab': AdmissionAdmissionTab;
       'admission.contact-entry': AdmissionContactEntry;
@@ -941,6 +1179,15 @@ declare module '@strapi/strapi' {
       'department.career-perspective': DepartmentCareerPerspective;
       'department.quick-links': DepartmentQuickLinks;
       'department.sub-quick-links': DepartmentSubQuickLinks;
+      'exam-cell.staff': ExamCellStaff;
+      'exam-cell.timetable': ExamCellTimetable;
+      'intership-policy.intership-files': IntershipPolicyIntershipFiles;
+      'online-syllabus.branch': OnlineSyllabusBranch;
+      'online-syllabus.strcture': OnlineSyllabusStrcture;
+      'online-syllabus.syllabus': OnlineSyllabusSyllabus;
+      'research-development.data': ResearchDevelopmentData;
+      'research-development.research-development': ResearchDevelopmentResearchDevelopment;
+      'research-development.researchdata': ResearchDevelopmentResearchdata;
       'shared.about-kit-co-ek': SharedAboutKitCoEk;
       'shared.academic-subject': SharedAcademicSubject;
       'shared.branchwiseplacement': SharedBranchwiseplacement;

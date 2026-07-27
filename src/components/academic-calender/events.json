@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_academic_calender_events",
+  "info": {
+    "displayName": "Events"
+  },
+  "options": {},
+  "attributes": {
+    "Tilte": {
+      "type": "string"
+    },
+    "Link": {
+      "type": "text"
+    }
+  },
+  "config": {}
+}

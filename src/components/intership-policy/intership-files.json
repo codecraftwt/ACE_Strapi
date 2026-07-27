@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_intership_policy_intership_files",
+  "info": {
+    "displayName": "intershipFiles"
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "Link": {
+      "type": "text"
+    }
+  },
+  "config": {}
+}

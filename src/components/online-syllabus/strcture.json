@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_online_syllabus_strctures",
+  "info": {
+    "displayName": "strcture"
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "Link": {
+      "type": "text"
+    }
+  },
+  "config": {}
+}

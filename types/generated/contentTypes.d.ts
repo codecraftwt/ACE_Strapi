@@ -534,6 +534,58 @@ export interface ApiAboutAbout extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiAcademicAcademic extends Struct.SingleTypeSchema {
+  collectionName: 'academics';
+  info: {
+    displayName: 'Academic';
+    pluralName: 'academics';
+    singularName: 'academic';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    academicCalender: Schema.Attribute.Component<
+      'academic-calender.academic-calender',
+      false
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    IntershipPolicy: Schema.Attribute.Component<
+      'academics.internship-policy',
+      false
+    >;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::academic.academic'
+    > &
+      Schema.Attribute.Private;
+    onlineSyllabus: Schema.Attribute.Component<
+      'academics.online-syllabus',
+      true
+    >;
+    policyDocuments: Schema.Attribute.Component<
+      'academics.policy-documents',
+      true
+    >;
+    publishedAt: Schema.Attribute.DateTime;
+    ResearchDevelopment: Schema.Attribute.Component<
+      'research-development.research-development',
+      false
+    >;
+    RulesRegulations: Schema.Attribute.Component<
+      'academics.rules-and-regulations',
+      true
+    >;
+    studentClub: Schema.Attribute.Component<'academics.student-club', false>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiAchievementAchievement extends Struct.CollectionTypeSchema {
   collectionName: 'achievements';
   info: {
@@ -958,6 +1010,44 @@ export interface ApiDepartmentDepartment extends Struct.CollectionTypeSchema {
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     URL: Schema.Attribute.Text;
+  };
+}
+
+export interface ApiExamCellExamCell extends Struct.SingleTypeSchema {
+  collectionName: 'exam_cells';
+  info: {
+    displayName: 'ExamCell';
+    pluralName: 'exam-cells';
+    singularName: 'exam-cell';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    About: Schema.Attribute.Blocks;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    DeanName: Schema.Attribute.String;
+    DeanPhoto: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    designation: Schema.Attribute.String;
+    ExamCell: Schema.Attribute.Component<'exam-cell.staff', true>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::exam-cell.exam-cell'
+    > &
+      Schema.Attribute.Private;
+    photos: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
+    publishedAt: Schema.Attribute.DateTime;
+    timetable: Schema.Attribute.Component<'exam-cell.timetable', true>;
+    Title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
   };
 }
 
@@ -2611,6 +2701,7 @@ declare module '@strapi/strapi' {
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
       'api::about.about': ApiAboutAbout;
+      'api::academic.academic': ApiAcademicAcademic;
       'api::achievement.achievement': ApiAchievementAchievement;
       'api::admission.admission': ApiAdmissionAdmission;
       'api::article.article': ApiArticleArticle;
@@ -2622,6 +2713,7 @@ declare module '@strapi/strapi' {
       'api::course.course': ApiCourseCourse;
       'api::cutoff.cutoff': ApiCutoffCutoff;
       'api::department.department': ApiDepartmentDepartment;
+      'api::exam-cell.exam-cell': ApiExamCellExamCell;
       'api::exam.exam': ApiExamExam;
       'api::faculty-leave.faculty-leave': ApiFacultyLeaveFacultyLeave;
       'api::faculty.faculty': ApiFacultyFaculty;

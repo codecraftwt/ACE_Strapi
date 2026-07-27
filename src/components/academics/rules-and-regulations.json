@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_academics_rules_and_regulations",
+  "info": {
+    "displayName": "Rules and Regulations"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "Link": {
+      "type": "text"
+    }
+  },
+  "config": {}
+}

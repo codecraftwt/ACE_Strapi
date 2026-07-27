@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_academics_internship_policies",
+  "info": {
+    "displayName": "Internship Policy"
+  },
+  "options": {},
+  "attributes": {
+    "intershipData": {
+      "type": "component",
+      "component": "intership-policy.intership-files",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

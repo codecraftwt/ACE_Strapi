@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_exam_cell_staff",
+  "info": {
+    "displayName": "Staff"
+  },
+  "options": {},
+  "attributes": {
+    "Name": {
+      "type": "string"
+    },
+    "Photo": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "designation": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

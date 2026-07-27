@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_academics_club_years",
+  "info": {
+    "displayName": "club-year",
+    "icon": "calendar"
+  },
+  "options": {},
+  "attributes": {
+    "academicYear": {
+      "type": "string",
+      "required": true
+    },
+    "clubs": {
+      "type": "component",
+      "repeatable": true,
+      "component": "academics.club-item"
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_academics_student_clubs",
+  "info": {
+    "displayName": "student-club",
+    "icon": "users"
+  },
+  "options": {},
+  "attributes": {
+    "aboutDescription": {
+      "type": "text"
+    },
+    "yearGroups": {
+      "type": "component",
+      "repeatable": true,
+      "component": "academics.club-year"
+    }
+  }
+}

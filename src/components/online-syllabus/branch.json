@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_online_syllabus_branches",
+  "info": {
+    "displayName": "Branch"
+  },
+  "options": {},
+  "attributes": {
+    "BranchName": {
+      "type": "string"
+    },
+    "structure": {
+      "type": "component",
+      "component": "online-syllabus.strcture",
+      "repeatable": true
+    },
+    "Syllabus": {
+      "type": "component",
+      "component": "online-syllabus.syllabus",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

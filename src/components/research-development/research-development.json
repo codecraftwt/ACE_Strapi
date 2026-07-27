@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_research_development_research_developments",
+  "info": {
+    "displayName": "ResearchDevelopment"
+  },
+  "options": {},
+  "attributes": {
+    "Files": {
+      "type": "component",
+      "component": "research-development.researchdata",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

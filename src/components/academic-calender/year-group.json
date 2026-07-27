@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_academic_calender_year_groups",
+  "info": {
+    "displayName": "Year Group"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "Events": {
+      "type": "component",
+      "component": "academic-calender.events",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

@@ -1,0 +1,57 @@
+{
+  "kind": "singleType",
+  "collectionName": "exam_cells",
+  "info": {
+    "singularName": "exam-cell",
+    "pluralName": "exam-cells",
+    "displayName": "ExamCell"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "About": {
+      "type": "blocks"
+    },
+    "DeanPhoto": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "DeanName": {
+      "type": "string"
+    },
+    "designation": {
+      "type": "string"
+    },
+    "ExamCell": {
+      "type": "component",
+      "component": "exam-cell.staff",
+      "repeatable": true
+    },
+    "photos": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "timetable": {
+      "type": "component",
+      "repeatable": true,
+      "component": "exam-cell.timetable"
+    }
+  }
+}

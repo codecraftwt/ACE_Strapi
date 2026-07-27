@@ -32,7 +32,9 @@ const { seedLog } = require('./seed-utils');
 // const seedPostGraduate = require('./seeders/seed-post-graduate');
 // const seedPhdProgram = require('./seeders/seed-phd-program');
 // const seedVocationalCourses = require('./seeders/seed-vocational-courses');
-const seedScholarship = require('./seeders/seed-scholarship');
+// const seedScholarship = require('./seeders/seed-scholarship');
+const seedStudentClub = require('./seeders/seed-student-club');
+const seedExamCellTimetable = require('./seeders/seed-exam-cell-timetable');
 
 /**
  * Run all seeders in dependency order.
@@ -85,7 +87,9 @@ async function runSeeders(strapi) {
   // await seedPostGraduate.seed(strapi);
   // await seedPhdProgram.seed(strapi);
   // await seedVocationalCourses.seed(strapi);
-  await seedScholarship.seed(strapi);
+  // await seedScholarship.seed(strapi);
+  await seedStudentClub.seed(strapi);
+  await seedExamCellTimetable.seed(strapi);
 
   const elapsed = ((Date.now() - start) / 1000).toFixed(2);
   seedLog(strapi, `========== SEEDING COMPLETE (${elapsed}s) ==========`);

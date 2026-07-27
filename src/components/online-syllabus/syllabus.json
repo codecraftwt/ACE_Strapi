@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_online_syllabus_syllabi",
+  "info": {
+    "displayName": "Syllabus"
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "Link": {
+      "type": "text"
+    }
+  },
+  "config": {}
+}
