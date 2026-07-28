@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_exam_cell_exam_calendars",
+  "info": {
+    "displayName": "ExamCalendar"
+  },
+  "options": {},
+  "attributes": {
+    "YearGroup": {
+      "type": "component",
+      "component": "exam-cell.exam-cal-year-group",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

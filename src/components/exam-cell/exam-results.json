@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_exam_cell_exam_results",
+  "info": {
+    "displayName": "Exam Results",
+    "description": "Exam cell result entry"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text"
+    },
+    "date": {
+      "type": "date"
+    },
+    "fileUrl": {
+      "type": "text"
+    }
+  }
+}

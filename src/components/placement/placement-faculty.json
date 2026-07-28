@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_placement_placement_faculties",
+  "info": {
+    "displayName": "PlacementFaculty"
+  },
+  "options": {},
+  "attributes": {
+    "facultyName": {
+      "type": "string"
+    },
+    "desiganation": {
+      "type": "string"
+    },
+    "photo": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    }
+  },
+  "config": {}
+}

@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_exam_cell_paper_setting",
+  "info": {
+    "displayName": "Paper Setting",
+    "description": "Exam cell paper setting documents"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text"
+    },
+    "date": {
+      "type": "date"
+    },
+    "fileUrl": {
+      "type": "text"
+    }
+  }
+}

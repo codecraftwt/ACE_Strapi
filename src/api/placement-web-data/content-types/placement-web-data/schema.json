@@ -1,0 +1,75 @@
+{
+  "kind": "singleType",
+  "collectionName": "placement_web_datas",
+  "info": {
+    "singularName": "placement-web-data",
+    "pluralName": "placement-web-datas",
+    "displayName": "PlacementWebData"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "TPOName": {
+      "type": "string"
+    },
+    "designation": {
+      "type": "string"
+    },
+    "TPOMail": {
+      "type": "email"
+    },
+    "Mobile": {
+      "type": "string"
+    },
+    "TPOPhoto": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "Message": {
+      "type": "blocks"
+    },
+    "yearlyplacementdata": {
+      "type": "component",
+      "component": "placement.yearly-placement-data",
+      "repeatable": true
+    },
+    "Banners": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "comapniesLogos": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "branchWisePlacement": {
+      "type": "component",
+      "component": "placement.branch-wise-placement",
+      "repeatable": true
+    },
+    "PlacementFaculty": {
+      "type": "component",
+      "component": "placement.placement-faculty",
+      "repeatable": true
+    }
+  }
+}

@@ -50,8 +50,43 @@
     },
     "timetable": {
       "type": "component",
-      "repeatable": true,
-      "component": "exam-cell.timetable"
+      "component": "exam-cell.timetable",
+      "repeatable": true
+    },
+    "examNotices": {
+      "type": "component",
+      "component": "exam-cell.exam-notice",
+      "repeatable": true
+    },
+    "examResults": {
+      "type": "component",
+      "component": "exam-cell.exam-results",
+      "repeatable": true
+    },
+    "examCalendar": {
+      "type": "component",
+      "component": "exam-cell.exam-calendar",
+      "repeatable": false
+    },
+    "Rules_Regualtion": {
+      "type": "component",
+      "component": "exam-cell.exam-rules-regulations",
+      "repeatable": false
+    },
+    "paperSetting": {
+      "type": "component",
+      "component": "exam-cell.paper-setting",
+      "repeatable": true
+    },
+    "facultyRemuneration": {
+      "type": "component",
+      "component": "exam-cell.faculty-remuneration",
+      "repeatable": true
+    },
+    "oldQuestionPaper": {
+      "type": "component",
+      "component": "exam-cell.old-question-papers",
+      "repeatable": true
     }
   }
 }

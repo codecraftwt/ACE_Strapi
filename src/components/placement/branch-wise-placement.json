@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_placement_branch_wise_placement",
+  "info": {
+    "displayName": "BranchWisePlacement",
+    "description": "Branch wise placement data"
+  },
+  "options": {},
+  "attributes": {
+    "branch": {
+      "type": "string",
+      "required": true
+    },
+    "year_2023_24": {
+      "type": "string"
+    },
+    "year_2024_25": {
+      "type": "string"
+    },
+    "year_2025_26": {
+      "type": "string"
+    }
+  }
+}

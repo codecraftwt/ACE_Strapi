@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_placement_yearly_placement_data",
+  "info": {
+    "displayName": "YearlyPlacementData"
+  },
+  "options": {},
+  "attributes": {
+    "Year": {
+      "type": "string"
+    },
+    "totJobOffers": {
+      "type": "string"
+    },
+    "NumberOfCompanies": {
+      "type": "string"
+    },
+    "AvgPackage": {
+      "type": "string"
+    },
+    "HeightestPayPackage": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

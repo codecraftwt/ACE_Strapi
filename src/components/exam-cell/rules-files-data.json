@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_exam_cell_rules_files_data",
+  "info": {
+    "displayName": "RulesFilesData"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "text"
+    },
+    "Link": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

@@ -1031,18 +1031,34 @@ export interface ApiExamCellExamCell extends Struct.SingleTypeSchema {
     DeanName: Schema.Attribute.String;
     DeanPhoto: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     designation: Schema.Attribute.String;
+    examCalendar: Schema.Attribute.Component<'exam-cell.exam-calendar', false>;
     ExamCell: Schema.Attribute.Component<'exam-cell.staff', true>;
+    examNotices: Schema.Attribute.Component<'exam-cell.exam-notice', true>;
+    examResults: Schema.Attribute.Component<'exam-cell.exam-results', true>;
+    facultyRemuneration: Schema.Attribute.Component<
+      'exam-cell.faculty-remuneration',
+      true
+    >;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::exam-cell.exam-cell'
     > &
       Schema.Attribute.Private;
+    oldQuestionPaper: Schema.Attribute.Component<
+      'exam-cell.old-question-papers',
+      true
+    >;
+    paperSetting: Schema.Attribute.Component<'exam-cell.paper-setting', true>;
     photos: Schema.Attribute.Media<
       'images' | 'files' | 'videos' | 'audios',
       true
     >;
     publishedAt: Schema.Attribute.DateTime;
+    Rules_Regualtion: Schema.Attribute.Component<
+      'exam-cell.exam-rules-regulations',
+      false
+    >;
     timetable: Schema.Attribute.Component<'exam-cell.timetable', true>;
     Title: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
@@ -1592,122 +1608,57 @@ export interface ApiNoticeNotice extends Struct.CollectionTypeSchema {
   };
 }
 
-export interface ApiPlacementPlacement extends Struct.CollectionTypeSchema {
-  collectionName: 'placements';
-  info: {
-    displayName: 'Placement';
-    pluralName: 'placements';
-    singularName: 'placement';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    accessDepartmentKey: Schema.Attribute.String;
-    companyImg: Schema.Attribute.Media<
-      'images' | 'files' | 'videos' | 'audios',
-      true
-    >;
-    companyName: Schema.Attribute.Text;
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    department: Schema.Attribute.Relation<
-      'oneToOne',
-      'api::department.department'
-    >;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::placement.placement'
-    > &
-      Schema.Attribute.Private;
-    Package: Schema.Attribute.Decimal;
-    publishedAt: Schema.Attribute.DateTime;
-    studentImg: Schema.Attribute.Media<
-      'images' | 'files' | 'videos' | 'audios',
-      true
-    >;
-    studentName: Schema.Attribute.Text;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    Year: Schema.Attribute.String;
-  };
-}
-
-export interface ApiPlacementstaffPlacementstaff
+export interface ApiPlacementWebDataPlacementWebData
   extends Struct.SingleTypeSchema {
-  collectionName: 'placementstaffs';
+  collectionName: 'placement_web_datas';
   info: {
-    displayName: 'placementstaff';
-    pluralName: 'placementstaffs';
-    singularName: 'placementstaff';
+    displayName: 'PlacementWebData';
+    pluralName: 'placement-web-datas';
+    singularName: 'placement-web-data';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    Email: Schema.Attribute.Email;
-    faculties: Schema.Attribute.Relation<'oneToMany', 'api::faculty.faculty'>;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::placementstaff.placementstaff'
-    > &
-      Schema.Attribute.Private;
-    Name: Schema.Attribute.String;
-    Phone: Schema.Attribute.BigInteger;
-    Photo: Schema.Attribute.Media<
+    Banners: Schema.Attribute.Media<
       'images' | 'files' | 'videos' | 'audios',
       true
     >;
-    Position: Schema.Attribute.Text;
-    publishedAt: Schema.Attribute.DateTime;
-    TOPMessage: Schema.Attribute.Blocks;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
-export interface ApiPlacementstatisticPlacementstatistic
-  extends Struct.CollectionTypeSchema {
-  collectionName: 'placementstatistics';
-  info: {
-    displayName: 'placementStatistic';
-    pluralName: 'placementstatistics';
-    singularName: 'placementstatistic';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    averagePackage: Schema.Attribute.Decimal;
-    branchWisePlacements: Schema.Attribute.Component<
-      'shared.branchwiseplacement',
+    branchWisePlacement: Schema.Attribute.Component<
+      'placement.branch-wise-placement',
+      true
+    >;
+    comapniesLogos: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
       true
     >;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    highestPackage: Schema.Attribute.Decimal;
+    designation: Schema.Attribute.String;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
-      'api::placementstatistic.placementstatistic'
+      'api::placement-web-data.placement-web-data'
     > &
       Schema.Attribute.Private;
+    Message: Schema.Attribute.Blocks;
+    Mobile: Schema.Attribute.String;
+    PlacementFaculty: Schema.Attribute.Component<
+      'placement.placement-faculty',
+      true
+    >;
     publishedAt: Schema.Attribute.DateTime;
-    totalCompanies: Schema.Attribute.Integer;
-    totalJobOffers: Schema.Attribute.Integer;
+    TPOMail: Schema.Attribute.Email;
+    TPOName: Schema.Attribute.String;
+    TPOPhoto: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    Year: Schema.Attribute.String;
+    yearlyplacementdata: Schema.Attribute.Component<
+      'placement.yearly-placement-data',
+      true
+    >;
   };
 }
 
@@ -2727,9 +2678,7 @@ declare module '@strapi/strapi' {
       'api::leave-balance.leave-balance': ApiLeaveBalanceLeaveBalance;
       'api::navbar.navbar': ApiNavbarNavbar;
       'api::notice.notice': ApiNoticeNotice;
-      'api::placement.placement': ApiPlacementPlacement;
-      'api::placementstaff.placementstaff': ApiPlacementstaffPlacementstaff;
-      'api::placementstatistic.placementstatistic': ApiPlacementstatisticPlacementstatistic;
+      'api::placement-web-data.placement-web-data': ApiPlacementWebDataPlacementWebData;
       'api::response.response': ApiResponseResponse;
       'api::result.result': ApiResultResult;
       'api::send-email.send-email': ApiSendEmailSendEmail;

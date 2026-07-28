@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_exam_cell_exam_rules_regulations",
+  "info": {
+    "displayName": "ExamRulesRegulations"
+  },
+  "options": {},
+  "attributes": {
+    "FilesData": {
+      "type": "component",
+      "component": "exam-cell.rules-files-data",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

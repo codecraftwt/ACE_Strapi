@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_exam_cell_exam_cal_year_groups",
+  "info": {
+    "displayName": "examCalYearGroup"
+  },
+  "options": {},
+  "attributes": {
+    "Year": {
+      "type": "string"
+    },
+    "Filedata": {
+      "type": "component",
+      "component": "exam-cell.exam-cal-file-data",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

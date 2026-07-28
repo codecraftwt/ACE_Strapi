@@ -33,8 +33,14 @@ const { seedLog } = require('./seed-utils');
 // const seedPhdProgram = require('./seeders/seed-phd-program');
 // const seedVocationalCourses = require('./seeders/seed-vocational-courses');
 // const seedScholarship = require('./seeders/seed-scholarship');
-const seedStudentClub = require('./seeders/seed-student-club');
-const seedExamCellTimetable = require('./seeders/seed-exam-cell-timetable');
+// const seedStudentClub = require('./seeders/seed-student-club');
+// const seedExamCellTimetable = require('./seeders/seed-exam-cell-timetable');
+// const seedExamCellNotice = require('./seeders/seed-exam-cell-notice');
+// const seedExamCellResults = require('./seeders/seed-exam-cell-results');
+// const seedExamCellPaperSetting = require('./seeders/seed-exam-cell-paper-setting');
+// const seedExamCellFacultyRemuneration = require('./seeders/seed-exam-cell-faculty-remuneration');
+const seedPlacementBranchWise = require('./seeders/seed-placement-branch-wise');
+
 
 /**
  * Run all seeders in dependency order.
@@ -88,8 +94,13 @@ async function runSeeders(strapi) {
   // await seedPhdProgram.seed(strapi);
   // await seedVocationalCourses.seed(strapi);
   // await seedScholarship.seed(strapi);
-  await seedStudentClub.seed(strapi);
-  await seedExamCellTimetable.seed(strapi);
+  // await seedStudentClub.seed(strapi);
+  // await seedExamCellTimetable.seed(strapi);
+  // await seedExamCellNotice.seed(strapi);
+  // await seedExamCellResults.seed(strapi);
+  // await seedExamCellPaperSetting.seed(strapi);
+  // await seedExamCellFacultyRemuneration.seed(strapi);
+  await seedPlacementBranchWise.seed(strapi);
 
   const elapsed = ((Date.now() - start) / 1000).toFixed(2);
   seedLog(strapi, `========== SEEDING COMPLETE (${elapsed}s) ==========`);

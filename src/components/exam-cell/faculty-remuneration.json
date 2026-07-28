@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_exam_cell_faculty_remuneration",
+  "info": {
+    "displayName": "Faculty Remuneration",
+    "description": "Exam cell faculty remuneration format documents"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "fileUrl": {
+      "type": "text"
+    }
+  }
+}

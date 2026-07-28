@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_exam_cell_exam_cal_file_data",
+  "info": {
+    "displayName": "examCal-FileData"
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "Link": {
+      "type": "text"
+    }
+  },
+  "config": {}
+}

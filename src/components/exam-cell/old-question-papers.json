@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_exam_cell_old_question_papers",
+  "info": {
+    "displayName": "Old Question Papers"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "text"
+    },
+    "Link": {
+      "type": "text"
+    }
+  },
+  "config": {}
+}

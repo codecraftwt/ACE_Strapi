@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_exam_cell_exam_notice",
+  "info": {
+    "displayName": "Exam Notice",
+    "description": "Exam cell notice entry"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text"
+    },
+    "date": {
+      "type": "date"
+    },
+    "fileUrl": {
+      "type": "text"
+    }
+  }
+}

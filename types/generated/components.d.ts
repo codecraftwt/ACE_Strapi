@@ -804,6 +804,127 @@ export interface DepartmentSubQuickLinks extends Struct.ComponentSchema {
   };
 }
 
+export interface ExamCellExamCalFileData extends Struct.ComponentSchema {
+  collectionName: 'components_exam_cell_exam_cal_file_data';
+  info: {
+    displayName: 'examCal-FileData';
+  };
+  attributes: {
+    Link: Schema.Attribute.Text;
+    Title: Schema.Attribute.String;
+  };
+}
+
+export interface ExamCellExamCalYearGroup extends Struct.ComponentSchema {
+  collectionName: 'components_exam_cell_exam_cal_year_groups';
+  info: {
+    displayName: 'examCalYearGroup';
+  };
+  attributes: {
+    Filedata: Schema.Attribute.Component<'exam-cell.exam-cal-file-data', true>;
+    Year: Schema.Attribute.String;
+  };
+}
+
+export interface ExamCellExamCalendar extends Struct.ComponentSchema {
+  collectionName: 'components_exam_cell_exam_calendars';
+  info: {
+    displayName: 'ExamCalendar';
+  };
+  attributes: {
+    YearGroup: Schema.Attribute.Component<
+      'exam-cell.exam-cal-year-group',
+      true
+    >;
+  };
+}
+
+export interface ExamCellExamNotice extends Struct.ComponentSchema {
+  collectionName: 'components_exam_cell_exam_notice';
+  info: {
+    description: 'Exam cell notice entry';
+    displayName: 'Exam Notice';
+  };
+  attributes: {
+    date: Schema.Attribute.Date;
+    description: Schema.Attribute.Text;
+    fileUrl: Schema.Attribute.Text;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface ExamCellExamResults extends Struct.ComponentSchema {
+  collectionName: 'components_exam_cell_exam_results';
+  info: {
+    description: 'Exam cell result entry';
+    displayName: 'Exam Results';
+  };
+  attributes: {
+    date: Schema.Attribute.Date;
+    description: Schema.Attribute.Text;
+    fileUrl: Schema.Attribute.Text;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface ExamCellExamRulesRegulations extends Struct.ComponentSchema {
+  collectionName: 'components_exam_cell_exam_rules_regulations';
+  info: {
+    displayName: 'ExamRulesRegulations';
+  };
+  attributes: {
+    FilesData: Schema.Attribute.Component<'exam-cell.rules-files-data', true>;
+  };
+}
+
+export interface ExamCellFacultyRemuneration extends Struct.ComponentSchema {
+  collectionName: 'components_exam_cell_faculty_remuneration';
+  info: {
+    description: 'Exam cell faculty remuneration format documents';
+    displayName: 'Faculty Remuneration';
+  };
+  attributes: {
+    fileUrl: Schema.Attribute.Text;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface ExamCellOldQuestionPapers extends Struct.ComponentSchema {
+  collectionName: 'components_exam_cell_old_question_papers';
+  info: {
+    displayName: 'Old Question Papers';
+  };
+  attributes: {
+    Link: Schema.Attribute.Text;
+    title: Schema.Attribute.Text;
+  };
+}
+
+export interface ExamCellPaperSetting extends Struct.ComponentSchema {
+  collectionName: 'components_exam_cell_paper_setting';
+  info: {
+    description: 'Exam cell paper setting documents';
+    displayName: 'Paper Setting';
+  };
+  attributes: {
+    date: Schema.Attribute.Date;
+    description: Schema.Attribute.Text;
+    fileUrl: Schema.Attribute.Text;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface ExamCellRulesFilesData extends Struct.ComponentSchema {
+  collectionName: 'components_exam_cell_rules_files_data';
+  info: {
+    displayName: 'RulesFilesData';
+  };
+  attributes: {
+    Link: Schema.Attribute.String;
+    title: Schema.Attribute.Text;
+  };
+}
+
 export interface ExamCellStaff extends Struct.ComponentSchema {
   collectionName: 'components_exam_cell_staff';
   info: {
@@ -875,6 +996,46 @@ export interface OnlineSyllabusSyllabus extends Struct.ComponentSchema {
   };
 }
 
+export interface PlacementBranchWisePlacement extends Struct.ComponentSchema {
+  collectionName: 'components_placement_branch_wise_placement';
+  info: {
+    description: 'Branch wise placement data';
+    displayName: 'BranchWisePlacement';
+  };
+  attributes: {
+    branch: Schema.Attribute.String & Schema.Attribute.Required;
+    year_2023_24: Schema.Attribute.String;
+    year_2024_25: Schema.Attribute.String;
+    year_2025_26: Schema.Attribute.String;
+  };
+}
+
+export interface PlacementPlacementFaculty extends Struct.ComponentSchema {
+  collectionName: 'components_placement_placement_faculties';
+  info: {
+    displayName: 'PlacementFaculty';
+  };
+  attributes: {
+    desiganation: Schema.Attribute.String;
+    facultyName: Schema.Attribute.String;
+    photo: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+  };
+}
+
+export interface PlacementYearlyPlacementData extends Struct.ComponentSchema {
+  collectionName: 'components_placement_yearly_placement_data';
+  info: {
+    displayName: 'YearlyPlacementData';
+  };
+  attributes: {
+    AvgPackage: Schema.Attribute.String;
+    HeightestPayPackage: Schema.Attribute.String;
+    NumberOfCompanies: Schema.Attribute.String;
+    totJobOffers: Schema.Attribute.String;
+    Year: Schema.Attribute.String;
+  };
+}
+
 export interface ResearchDevelopmentData extends Struct.ComponentSchema {
   collectionName: 'components_research_development_data';
   info: {
@@ -941,22 +1102,6 @@ export interface SharedAcademicSubject extends Struct.ComponentSchema {
     credits: Schema.Attribute.Integer;
     subjectCode: Schema.Attribute.String;
     subjectName: Schema.Attribute.Text;
-  };
-}
-
-export interface SharedBranchwiseplacement extends Struct.ComponentSchema {
-  collectionName: 'components_shared_branchwiseplacements';
-  info: {
-    displayName: 'branchwiseplacement';
-  };
-  attributes: {
-    averagePackage: Schema.Attribute.Decimal;
-    department: Schema.Attribute.Relation<
-      'oneToOne',
-      'api::department.department'
-    >;
-    highestPackage: Schema.Attribute.Decimal;
-    totalPlaced: Schema.Attribute.Integer;
   };
 }
 
@@ -1179,18 +1324,30 @@ declare module '@strapi/strapi' {
       'department.career-perspective': DepartmentCareerPerspective;
       'department.quick-links': DepartmentQuickLinks;
       'department.sub-quick-links': DepartmentSubQuickLinks;
+      'exam-cell.exam-cal-file-data': ExamCellExamCalFileData;
+      'exam-cell.exam-cal-year-group': ExamCellExamCalYearGroup;
+      'exam-cell.exam-calendar': ExamCellExamCalendar;
+      'exam-cell.exam-notice': ExamCellExamNotice;
+      'exam-cell.exam-results': ExamCellExamResults;
+      'exam-cell.exam-rules-regulations': ExamCellExamRulesRegulations;
+      'exam-cell.faculty-remuneration': ExamCellFacultyRemuneration;
+      'exam-cell.old-question-papers': ExamCellOldQuestionPapers;
+      'exam-cell.paper-setting': ExamCellPaperSetting;
+      'exam-cell.rules-files-data': ExamCellRulesFilesData;
       'exam-cell.staff': ExamCellStaff;
       'exam-cell.timetable': ExamCellTimetable;
       'intership-policy.intership-files': IntershipPolicyIntershipFiles;
       'online-syllabus.branch': OnlineSyllabusBranch;
       'online-syllabus.strcture': OnlineSyllabusStrcture;
       'online-syllabus.syllabus': OnlineSyllabusSyllabus;
+      'placement.branch-wise-placement': PlacementBranchWisePlacement;
+      'placement.placement-faculty': PlacementPlacementFaculty;
+      'placement.yearly-placement-data': PlacementYearlyPlacementData;
       'research-development.data': ResearchDevelopmentData;
       'research-development.research-development': ResearchDevelopmentResearchDevelopment;
       'research-development.researchdata': ResearchDevelopmentResearchdata;
       'shared.about-kit-co-ek': SharedAboutKitCoEk;
       'shared.academic-subject': SharedAcademicSubject;
-      'shared.branchwiseplacement': SharedBranchwiseplacement;
       'shared.hall-ticket-subject': SharedHallTicketSubject;
       'shared.media': SharedMedia;
       'shared.nav-buttons': SharedNavButtons;
