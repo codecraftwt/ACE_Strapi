@@ -1,0 +1,25 @@
+{
+  "kind": "singleType",
+  "collectionName": "news_events",
+  "info": {
+    "singularName": "news-event",
+    "pluralName": "news-events",
+    "displayName": "NewsEvent"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "events": {
+      "type": "component",
+      "repeatable": true,
+      "component": "news-event.event"
+    },
+    "news": {
+      "type": "component",
+      "repeatable": true,
+      "component": "news-event.news"
+    }
+  }
+}

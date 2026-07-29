@@ -951,6 +951,40 @@ export interface ExamCellTimetable extends Struct.ComponentSchema {
   };
 }
 
+export interface FooterAboutLinks extends Struct.ComponentSchema {
+  collectionName: 'components_footer_about_links';
+  info: {
+    displayName: 'About-links';
+  };
+  attributes: {
+    link: Schema.Attribute.String;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface FooterContact extends Struct.ComponentSchema {
+  collectionName: 'components_footer_contacts';
+  info: {
+    displayName: 'contact';
+  };
+  attributes: {
+    Address: Schema.Attribute.Text;
+    contactNumbers: Schema.Attribute.Text;
+    email: Schema.Attribute.Email;
+  };
+}
+
+export interface FooterUsefulLinks extends Struct.ComponentSchema {
+  collectionName: 'components_footer_useful_links';
+  info: {
+    displayName: 'useful-Links';
+  };
+  attributes: {
+    link: Schema.Attribute.String;
+    title: Schema.Attribute.String;
+  };
+}
+
 export interface IntershipPolicyIntershipFiles extends Struct.ComponentSchema {
   collectionName: 'components_intership_policy_intership_files';
   info: {
@@ -959,6 +993,34 @@ export interface IntershipPolicyIntershipFiles extends Struct.ComponentSchema {
   attributes: {
     Link: Schema.Attribute.Text;
     Title: Schema.Attribute.String;
+  };
+}
+
+export interface NewsEventEvent extends Struct.ComponentSchema {
+  collectionName: 'components_news_event_events';
+  info: {
+    displayName: 'Event';
+    icon: 'calendar';
+  };
+  attributes: {
+    date: Schema.Attribute.Date;
+    description: Schema.Attribute.Text;
+    image: Schema.Attribute.Media<'images'>;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface NewsEventNews extends Struct.ComponentSchema {
+  collectionName: 'components_news_event_news';
+  info: {
+    displayName: 'News';
+    icon: 'newspaper';
+  };
+  attributes: {
+    date: Schema.Attribute.Date;
+    description: Schema.Attribute.Text;
+    image: Schema.Attribute.Media<'images'>;
+    title: Schema.Attribute.String;
   };
 }
 
@@ -1336,7 +1398,12 @@ declare module '@strapi/strapi' {
       'exam-cell.rules-files-data': ExamCellRulesFilesData;
       'exam-cell.staff': ExamCellStaff;
       'exam-cell.timetable': ExamCellTimetable;
+      'footer.about-links': FooterAboutLinks;
+      'footer.contact': FooterContact;
+      'footer.useful-links': FooterUsefulLinks;
       'intership-policy.intership-files': IntershipPolicyIntershipFiles;
+      'news-event.event': NewsEventEvent;
+      'news-event.news': NewsEventNews;
       'online-syllabus.branch': OnlineSyllabusBranch;
       'online-syllabus.strcture': OnlineSyllabusStrcture;
       'online-syllabus.syllabus': OnlineSyllabusSyllabus;

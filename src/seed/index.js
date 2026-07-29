@@ -39,7 +39,9 @@ const { seedLog } = require('./seed-utils');
 // const seedExamCellResults = require('./seeders/seed-exam-cell-results');
 // const seedExamCellPaperSetting = require('./seeders/seed-exam-cell-paper-setting');
 // const seedExamCellFacultyRemuneration = require('./seeders/seed-exam-cell-faculty-remuneration');
-const seedPlacementBranchWise = require('./seeders/seed-placement-branch-wise');
+// const seedPlacementBranchWise = require('./seeders/seed-placement-branch-wise');
+const seedEvents = require('./seeders/seed-events');
+const seedNews = require('./seeders/seed-news');
 
 
 /**
@@ -100,7 +102,9 @@ async function runSeeders(strapi) {
   // await seedExamCellResults.seed(strapi);
   // await seedExamCellPaperSetting.seed(strapi);
   // await seedExamCellFacultyRemuneration.seed(strapi);
-  await seedPlacementBranchWise.seed(strapi);
+  // await seedPlacementBranchWise.seed(strapi);
+  await seedEvents.seed(strapi);
+  await seedNews.seed(strapi);
 
   const elapsed = ((Date.now() - start) / 1000).toFixed(2);
   seedLog(strapi, `========== SEEDING COMPLETE (${elapsed}s) ==========`);

@@ -1,0 +1,43 @@
+{
+  "kind": "singleType",
+  "collectionName": "footers",
+  "info": {
+    "singularName": "footer",
+    "pluralName": "footers",
+    "displayName": "footer"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "CollegeName": {
+      "type": "text"
+    },
+    "AboutLinks": {
+      "type": "component",
+      "component": "footer.about-links",
+      "repeatable": true
+    },
+    "usefulLinks": {
+      "type": "component",
+      "component": "footer.useful-links",
+      "repeatable": true
+    },
+    "contact": {
+      "type": "component",
+      "component": "footer.contact",
+      "repeatable": true
+    },
+    "Img": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    }
+  }
+}

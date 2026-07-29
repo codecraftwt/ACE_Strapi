@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_news_event_news",
+  "info": {
+    "displayName": "News",
+    "icon": "newspaper"
+  },
+  "options": {},
+  "attributes": {
+    "date": {
+      "type": "date"
+    },
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": ["images"]
+    }
+  }
+}

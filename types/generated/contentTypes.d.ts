@@ -799,6 +799,46 @@ export interface ApiBannerBanner extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiCareerCareer extends Struct.CollectionTypeSchema {
+  collectionName: 'careers';
+  info: {
+    displayName: 'Career';
+    pluralName: 'careers';
+    singularName: 'career';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    address: Schema.Attribute.Text;
+    appliedPost: Schema.Attribute.Enumeration<
+      ['Professor', 'Associate Professor', 'Assistant Professor', 'Other']
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    department: Schema.Attribute.Relation<
+      'oneToOne',
+      'api::department.department'
+    >;
+    email: Schema.Attribute.Email;
+    fullName: Schema.Attribute.String;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::career.career'
+    > &
+      Schema.Attribute.Private;
+    mobile: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    Qalification: Schema.Attribute.String;
+    Resume: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiCategoryCategory extends Struct.CollectionTypeSchema {
   collectionName: 'categories';
   info: {
@@ -1318,6 +1358,38 @@ export interface ApiFeeStructureFeeStructure
   };
 }
 
+export interface ApiFooterFooter extends Struct.SingleTypeSchema {
+  collectionName: 'footers';
+  info: {
+    displayName: 'footer';
+    pluralName: 'footers';
+    singularName: 'footer';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    AboutLinks: Schema.Attribute.Component<'footer.about-links', true>;
+    CollegeName: Schema.Attribute.Text;
+    contact: Schema.Attribute.Component<'footer.contact', true>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    Img: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::footer.footer'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    usefulLinks: Schema.Attribute.Component<'footer.useful-links', true>;
+  };
+}
+
 export interface ApiGalleryGallery extends Struct.CollectionTypeSchema {
   collectionName: 'galleries';
   info: {
@@ -1549,6 +1621,35 @@ export interface ApiNavbarNavbar extends Struct.CollectionTypeSchema {
     logo: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     navbuttons: Schema.Attribute.Component<'shared.nav-buttons', true>;
     navitems: Schema.Attribute.Component<'shared.navitems', true>;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiNewsEventNewsEvent extends Struct.SingleTypeSchema {
+  collectionName: 'news_events';
+  info: {
+    displayName: 'NewsEvent';
+    pluralName: 'news-events';
+    singularName: 'news-event';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    events: Schema.Attribute.Component<'news-event.event', true>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::news-event.news-event'
+    > &
+      Schema.Attribute.Private;
+    news: Schema.Attribute.Component<'news-event.news', true>;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -2659,6 +2760,7 @@ declare module '@strapi/strapi' {
       'api::attendance.attendance': ApiAttendanceAttendance;
       'api::author.author': ApiAuthorAuthor;
       'api::banner.banner': ApiBannerBanner;
+      'api::career.career': ApiCareerCareer;
       'api::category.category': ApiCategoryCategory;
       'api::contact.contact': ApiContactContact;
       'api::course.course': ApiCourseCourse;
@@ -2670,6 +2772,7 @@ declare module '@strapi/strapi' {
       'api::faculty.faculty': ApiFacultyFaculty;
       'api::fee-receipt.fee-receipt': ApiFeeReceiptFeeReceipt;
       'api::fee-structure.fee-structure': ApiFeeStructureFeeStructure;
+      'api::footer.footer': ApiFooterFooter;
       'api::gallery.gallery': ApiGalleryGallery;
       'api::global.global': ApiGlobalGlobal;
       'api::hall-ticket.hall-ticket': ApiHallTicketHallTicket;
@@ -2677,6 +2780,7 @@ declare module '@strapi/strapi' {
       'api::home.home': ApiHomeHome;
       'api::leave-balance.leave-balance': ApiLeaveBalanceLeaveBalance;
       'api::navbar.navbar': ApiNavbarNavbar;
+      'api::news-event.news-event': ApiNewsEventNewsEvent;
       'api::notice.notice': ApiNoticeNotice;
       'api::placement-web-data.placement-web-data': ApiPlacementWebDataPlacementWebData;
       'api::response.response': ApiResponseResponse;
