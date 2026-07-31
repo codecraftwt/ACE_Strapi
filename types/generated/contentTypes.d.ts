@@ -1020,6 +1020,22 @@ export interface ApiDepartmentDepartment extends Struct.CollectionTypeSchema {
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     cutoffs: Schema.Attribute.Relation<'oneToMany', 'api::cutoff.cutoff'>;
+    demo: Schema.Attribute.DynamicZone<
+      [
+        'exam-cell.timetable',
+        'exam-cell.staff',
+        'exam-cell.rules-files-data',
+        'exam-cell.paper-setting',
+        'exam-cell.old-question-papers',
+        'exam-cell.faculty-remuneration',
+        'exam-cell.exam-rules-regulations',
+        'exam-cell.exam-results',
+        'exam-cell.exam-notice',
+        'exam-cell.exam-calendar',
+        'exam-cell.exam-cal-year-group',
+        'exam-cell.exam-cal-file-data',
+      ]
+    >;
     Department_mission: Schema.Attribute.Blocks;
     Department_vision: Schema.Attribute.Blocks;
     deptName: Schema.Attribute.String;

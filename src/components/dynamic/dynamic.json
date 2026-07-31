@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_dynamic_dynamics",
+  "info": {
+    "displayName": "Dynamic"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

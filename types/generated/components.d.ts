@@ -804,6 +804,16 @@ export interface DepartmentSubQuickLinks extends Struct.ComponentSchema {
   };
 }
 
+export interface DynamicDynamic extends Struct.ComponentSchema {
+  collectionName: 'components_dynamic_dynamics';
+  info: {
+    displayName: 'Dynamic';
+  };
+  attributes: {
+    name: Schema.Attribute.String;
+  };
+}
+
 export interface ExamCellExamCalFileData extends Struct.ComponentSchema {
   collectionName: 'components_exam_cell_exam_cal_file_data';
   info: {
@@ -1386,6 +1396,7 @@ declare module '@strapi/strapi' {
       'department.career-perspective': DepartmentCareerPerspective;
       'department.quick-links': DepartmentQuickLinks;
       'department.sub-quick-links': DepartmentSubQuickLinks;
+      'dynamic.dynamic': DynamicDynamic;
       'exam-cell.exam-cal-file-data': ExamCellExamCalFileData;
       'exam-cell.exam-cal-year-group': ExamCellExamCalYearGroup;
       'exam-cell.exam-calendar': ExamCellExamCalendar;
