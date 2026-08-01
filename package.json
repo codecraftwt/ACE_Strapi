@@ -19,6 +19,7 @@
     "@strapi/plugin-cloud": "5.49.0",
     "@strapi/plugin-users-permissions": "5.49.0",
     "@strapi/provider-email-nodemailer": "^5.50.1",
+    "@strapi/provider-upload-cloudinary": "^5.49.0",
     "@strapi/strapi": "5.49.0",
     "better-sqlite3": "12.8.0",
     "fs-extra": "^10.0.0",
