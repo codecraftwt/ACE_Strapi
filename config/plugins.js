@@ -26,12 +26,18 @@ module.exports = ({ env }) => ({
       },
       actionOptions: {
         upload: {
-          upload_preset: env('CLOUDINARY_UPLOAD_PRESET', 'KIT_strapi_media'),
           folder: env('CLOUDINARY_FOLDER', 'KIT-Website'),
+          overwrite: true,
+          invalidate: true,
+          unique_filename: false,
+          use_filename: true,
         },
         uploadStream: {
-          upload_preset: env('CLOUDINARY_UPLOAD_PRESET', 'KIT_strapi_media'),
           folder: env('CLOUDINARY_FOLDER', 'KIT-Website'),
+          overwrite: true,
+          invalidate: true,
+          unique_filename: false,
+          use_filename: true,
         },
         delete: {},
       },
